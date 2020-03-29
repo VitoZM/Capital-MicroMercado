@@ -11,6 +11,7 @@ Estado char(1) DEFAULT '1',
 Marca varchar(80),
 Contenido varchar(40)
 )
+
 ALTER TABLE PRODUCTO ALTER COLUMN Nombre varchar(60)
 select * from listarproductos
 --1043 1042
@@ -29,6 +30,8 @@ CostoTotal float not null,
 Ultimo char(1),
 Descripcion varchar(100),
 IdDistribuidora int,
+IdUsuario int,
+foreign key(IdUsuario)references usuario(IdUsuario),
 foreign key(IdDistribuidora)references distribuidora(IdDistribuidora)
 )
 
@@ -39,6 +42,8 @@ Direccion varchar(60),
 Telefono varchar(20),
 Categoria varchar(25)
 )
+
+ALTER TABLE DISTRIBUIDORA ADD
 
 CREATE TABLE LOTE(
 IdLote int identity primary key,
@@ -68,9 +73,9 @@ CREATE TABLE CLIENTE(
 IdCliente int identity primary key,
 CICliente varchar(20) unique,
 Nombres varchar(60) not null,
-Apellidos varchar(60) not null,
 Telefono varchar(20),
 )
+
 insert into cliente values('1033','al','zp','746531')
 update cliente set CICliente='1044' where IdCliente=1
 
@@ -84,7 +89,8 @@ Email varchar(40),
 Direccion varchar(60) not null,
 Rol char(1) not null,
 Estado char(1),
-Contrasena varchar(20)
+Contrasena varchar(20),
+Sueldo float
 )
 
 CREATE TABLE VENTA(
@@ -98,6 +104,7 @@ Cambio float not null,
 Estado char(1),
 Ultimo char(1),
 Pago varchar(10),
+Descripcion varchar(120),
 FOREIGN KEY(IdUsuario)REFERENCES USUARIO(IdUsuario),
 FOREIGN KEY(IdCliente)REFERENCES CLIENTE(IdCliente)
 )
@@ -114,7 +121,52 @@ FOREIGN KEY(IdVenta)REFERENCES VENTA(IdVenta),
 FOREIGN KEY(IdProducto)REFERENCES PRODUCTO(IdProducto)
 )
 
-CREATE TABLE CAJA(
-
+CREATE TABLE EGRESO
+(
+IdEgreso int identity primary key,
+IdUsuario int not null,
+Fecha datetime,
+Categoria varchar(30),
+Monto float,
+Descripcion varchar(120),
+FOREIGN KEY(IdUsuario)REFERENCES USUARIO(IdUsuario)
 )
+
+CREATE TABLE SALARIO
+(
+IdSalario int identity primary key,
+IdUsuario int not null,
+MesPagado varchar(10),
+Sueldo float,
+Descuento float,
+LiquidoPagable float,
+Fecha datetime,
+Descripcion varchar(120),
+foreign key(IdUsuario)references USUARIO(IdUsuario)
+)
+
+CREATE TABLE INVERSION
+(
+IdInversion int identity primary key,
+CIInversor varchar(20),
+NombreInversor varchar(40),
+IdUsuario int not null,
+Monto float not null,
+Fecha datetime not null,
+Descripcion varchar(120),
+FOREIGN KEY(IdUsuario)REFERENCES USUARIO(IdUsuario)
+)
+drop table inversion
+
+CREATE TABLE CAJA(
+IdCaja int identity primary key,
+IdUsuario int not null,
+Monto float,
+Fecha date,
+Cierre char(1),
+Ultimo char(1),
+Primero char(1),
+FOREIGN KEY(IdUsuario)REFERENCES USUARIO(IdUsuario)
+)
+
 ---FALTA CAJA,REGISTRO VENTAS A CREDITO, REGISTRO DE DESCUENTO DE PRODUCTOS
