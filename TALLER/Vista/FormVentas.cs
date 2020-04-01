@@ -214,7 +214,28 @@ namespace TALLER.CapaVista
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
+                unirFilas();
                 this.txtBoxCodigo.Focus();
+            }
+        }
+
+        private void unirFilas()
+        {
+            int fila = this.dgvVenta.Rows.Count - 1;
+            if (fila > -1)
+            {
+                string codigo = this.dgvVenta.Rows[fila].Cells[0].Value.ToString();
+                for (int i = 0; i < fila; i++)
+                {
+                    string codigoFila = this.dgvVenta.Rows[i].Cells[0].Value.ToString();
+                    if (codigo == codigoFila)
+                    {
+                        int cantidad = bd.convertirEntero(this.dgvVenta.Rows[fila].Cells[4].Value.ToString());
+                        int cantidadFila = bd.convertirEntero(this.dgvVenta.Rows[i].Cells[4].Value.ToString());
+                        dgvVenta.Rows.RemoveAt(fila);
+                        this.dgvVenta.Rows[i].Cells[4].Value = (cantidad + cantidadFila).ToString();
+                    }
+                }
             }
         }
 
@@ -223,6 +244,7 @@ namespace TALLER.CapaVista
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
+                unirFilas();
                 this.txtBoxCodigo.Focus();
             }
             if (e.KeyCode == Keys.Space)
@@ -387,6 +409,18 @@ namespace TALLER.CapaVista
         private void dgvVenta_Click(object sender, EventArgs e)
         {
             this.txtBoxCantidad.Focus();
+        }
+
+        private void txtBoxPago_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                if (banVenta)
+                    btnRegistrar_Click(sender, e);
+                else
+                    btnProcesar_Click(sender, e);
+            }
         }
     }
 }

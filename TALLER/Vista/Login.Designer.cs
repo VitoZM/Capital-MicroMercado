@@ -82,7 +82,6 @@
             this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(212, 23);
             this.txtBoxPassword.TabIndex = 57;
-            this.txtBoxPassword.Text = "SwordCapital";
             this.txtBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxPassword_KeyDown);
             // 
             // btnNuevo

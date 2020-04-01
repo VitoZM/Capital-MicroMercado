@@ -820,7 +820,6 @@ namespace TALLER.Controlador
             }
             finally
             {
-                
                 this.conn.Close();
             }
 
@@ -849,7 +848,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "EXEC INSERTARCOMPRA " + sinComas(compra.COSTOTOTAL) + ",'" + compra.DESCRIPCION + "','" + distribuidora.NOMBRE + "','" + distribuidora.DIRECCION + "','" + distribuidora.TELEFONO + "','" + distribuidora.CATEGORIA + "'," + compra.IDUSUARIO;
+                string comando = "EXEC INSERTARCOMPRA " + sinComas(compra.COSTOTOTAL) + ",'" + compra.DESCRIPCION + "','" + distribuidora.NOMBRE + "','" + distribuidora.DIRECCION + "','" + distribuidora.TELEFONO + "','" + distribuidora.CATEGORIA + "',1";
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;
@@ -870,14 +869,25 @@ namespace TALLER.Controlador
                 comando = "EXEC CERRARCOMPRA " + idCompra;
                 cmd.CommandText = comando;
                 cmd.ExecuteScalar();
-
-                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                this.conn.Close();
+                cerrarCompras();
             }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void cerrarCompras()
+        {
+            string comando = "UPDATE COMPRA SET ULTIMO='0'";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = comando;
+            cmd.ExecuteNonQuery();
         }
 
         private string voltearFecha(string fecha)
