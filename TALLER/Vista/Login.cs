@@ -113,5 +113,10 @@ namespace TALLER.CapaVista
                 btnNuevo_Click(sender, e);
             }
         }
+
+        private void txtBoxCiUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.txtBoxPassword.Focus();
+        }
     }
 }

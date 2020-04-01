@@ -812,15 +812,27 @@ namespace TALLER.Controlador
                 comando = "EXEC CERRARVENTA " + idVenta;
                 cmd.CommandText = comando;
                 cmd.ExecuteScalar();
-
-                conn.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                cerrarVentas();
+            }
+            finally
+            {
+                
                 this.conn.Close();
             }
 
+        }
+
+        private void cerrarVentas()
+        {
+            string comando = "UPDATE VENTA SET ULTIMO='0'";
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandText = comando;
+            cmd.ExecuteNonQuery();
         }
 
         public void insertarCliente(Cliente cliente)

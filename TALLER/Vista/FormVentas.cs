@@ -22,11 +22,7 @@ namespace TALLER.CapaVista
         Venta venta = null;
         List<LoteVenta> listaLoteVenta = new List<LoteVenta>();
         BaseDatos bd = new BaseDatos();
-        bool existeCliente = false;
-        private Socket socket;
-        private Socket socketClient;
-        private BackgroundWorker bw;
-        private string codigoSocket = "";
+        bool banVenta = false;
         public FormVentas()
         {
             InitializeComponent();
@@ -67,8 +63,9 @@ namespace TALLER.CapaVista
 
         private void btnProcesar_Click(object sender, EventArgs e)
         {
+            banVenta = true;
             if(ventaValida())
-                cambiarModoBotones(false);
+                cambiarModoBotones(!banVenta);
             else
                 MessageBox.Show("¡VENTA INCOMPLETA O VACIA!");
         }
@@ -86,7 +83,8 @@ namespace TALLER.CapaVista
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             string codigo = this.txtBoxCodigo.Text;
-            ingresarProducto(codigo);
+            if (codigo != "")
+                ingresarProducto(codigo);
         }
 
         private void ingresarProducto(string codigo)
@@ -109,7 +107,7 @@ namespace TALLER.CapaVista
 
                 this.txtBoxCodigo.Text = "";
                 this.txtBoxCantidad.Text = "";
-                this.txtBoxCantidad.Focus();              
+                this.txtBoxCantidad.Focus();
             }
             else
                 MessageBox.Show("PRODUCTO INEXISTENTE");
@@ -122,6 +120,11 @@ namespace TALLER.CapaVista
             {
                 e.SuppressKeyPress = true;
                 btnBuscarProducto_Click(sender, e);
+            }
+            if(e.KeyCode == Keys.Space)
+            {
+                e.SuppressKeyPress = true;
+                this.txtBoxEfectivo.Focus();
             }
         }
 
@@ -246,7 +249,7 @@ namespace TALLER.CapaVista
         {
             if (ventaValida())
             {
-                cambiarModoBotones(true);
+                cambiarModoBotones(banVenta);
                 instanciarCliente();
                 instanciarVenta();
                 instanciarLoteVenta();
@@ -309,14 +312,16 @@ namespace TALLER.CapaVista
             this.txtBoxEfectivo.Text = string.Empty;
             this.txtBoxCambio.Text = string.Empty;
             this.txtBoxCosto.Text = string.Empty;
-            this.txtBoxPago.Text = string.Empty;
+            this.txtBoxPago.Text = "EFECTIVO";
             this.txtBoxCantidad.Text = string.Empty;
             this.txtBoxCodigo.Focus();
+            banVenta = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            cambiarModoBotones(true);
+            banVenta = true;
+            cambiarModoBotones(banVenta);
         }
 
         private void cambiarModoBotones(bool modo)
@@ -360,6 +365,28 @@ namespace TALLER.CapaVista
         {
             if (this.txtBoxPago.Text == "CREDITO" || this.txtBoxPago.Text == "TARJETA")
                 this.txtBoxEfectivo.Text = this.txtBoxCosto.Text;
+        }
+
+        private void txtBoxEfectivo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                e.SuppressKeyPress = true;
+                this.txtBoxCodigo.Focus();
+            }
+            if(e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                if (banVenta)
+                    btnRegistrar_Click(sender, e);
+                else
+                    btnProcesar_Click(sender, e);
+            }
+        }
+
+        private void dgvVenta_Click(object sender, EventArgs e)
+        {
+            this.txtBoxCantidad.Focus();
         }
     }
 }
