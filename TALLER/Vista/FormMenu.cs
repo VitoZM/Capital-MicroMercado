@@ -307,6 +307,14 @@ namespace TALLER.CapaVista
             }
         }
 
+        private void btnCreditos_Click(object sender, EventArgs e)
+        {
+            FormCreditos frm = new FormCreditos(usuario);
+            btnCuentas_Click(sender, e);
+            frm.FormClosed += new FormClosedEventHandler(mostrarlogoAlCerrarForm);
+            AbrirFormInPanel(frm);
+        }
+
         private void btnVentas_Click(object sender, EventArgs e)
         {
             FormVentas frm = new FormVentas(usuario);

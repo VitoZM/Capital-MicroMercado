@@ -20,23 +20,31 @@ namespace TALLER.CapaVista
         DataTable tabla = new DataTable();
         List<ListaVenta> listaVentas = new List<ListaVenta>();
         Usuario usuario;
+        Cliente cliente;
+        bool ban = false;
 
         public FormMisVentas(Usuario u)
         {
             InitializeComponent();
             usuario = u;
+            ban = true;
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+
+        public FormMisVentas(Usuario u,Cliente c)
+        {
+            InitializeComponent();
+            usuario = u;
+            cliente = c;
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void FormReparacion_Load(object sender, EventArgs e)
-        {
+        { 
             cargarColumnas();
             cargarDatos();
             if (this.dgvIngresos.Rows.Count > 0)
-            {
-                llenarBotones();
                 calcularTotal();
-            }
         }
 
         private void calcularTotal()
@@ -59,46 +67,14 @@ namespace TALLER.CapaVista
             tabla.Columns.Add("EFECTIVO");//6
             tabla.Columns.Add("CAMBIO");//7
             tabla.Columns.Add("ESTADO");//8
-            tabla.Columns.Add("MOSTRAR");//9
-        }
-
-        private void llenarBotones()
-        {
-            int width = dgvIngresos.Rows[0].Cells[9].Size.Width;
-            int height = dgvIngresos.Rows[0].Cells[9].Size.Height;
-            foreach (DataGridViewRow row in dgvIngresos.Rows)
-            {
-                Button button = new Button();
-                dgvIngresos.Controls.Add(button);
-                Rectangle rectangle = dgvIngresos.GetCellDisplayRectangle(9, row.Index, true);
-                button.Size = new Size(rectangle.Width, rectangle.Height);
-                button.Location = new Point(rectangle.X, rectangle.Y);
-                button.Text = row.Cells[0].Value.ToString();
-                button.ForeColor = System.Drawing.Color.Silver;
-
-                void button_Click(object sender, EventArgs e)
-                {
-                    for (int i = 0; i < listaVentas.Count; i++)
-                    {
-                        ListaVenta lv = listaVentas[i];
-                        if (lv.IDVENTA == bd.convertirEntero(button.Text))
-                        {
-                            FormLoteVenta frm = new FormLoteVenta(lv);
-                            string respuesta = frm.ShowDialog().ToString();
-                            if (respuesta == "OK")
-                                MessageBox.Show("PRESIONE BOTON INGRESOS NUEVAMENTE PARA ACTUALIZAR");
-                            break;
-                        }
-                    }
-                }
-
-                button.Click += new EventHandler(button_Click);
-            }
         }
 
         private void cargarDatos()
         {
-            listaVentas = bd.listarVentas(usuario);
+            if (ban)
+                listaVentas = bd.listarVentas(usuario);
+            else
+                listaVentas = bd.listarDeudasCliente(cliente);
 
             foreach (ListaVenta v in listaVentas)
                 tabla.Rows.Add(new Object[] { v.IDVENTA, v.NOMBREUSUARIO, v.NOMBRECLIENTE, v.FECHA, v.COSTOTOTAL, v.PAGO, v.EFECTIVO, v.CAMBIO, v.ESTADO });
@@ -123,7 +99,14 @@ namespace TALLER.CapaVista
                     FormLoteVenta frm = new FormLoteVenta(lv);
                     string respuesta = frm.ShowDialog().ToString();
                     if (respuesta == "OK")
+                    {
+                        if (!ban)
+                        {
+                            DialogResult = System.Windows.Forms.DialogResult.OK;
+                            return;
+                        }
                         MessageBox.Show("PRESIONE BOTON INGRESOS NUEVAMENTE PARA ACTUALIZAR");
+                    }
                     break;
                 }
             }

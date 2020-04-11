@@ -60,3 +60,4 @@ D:\TRABAJOS\Capital-MicroMercado\TALLER\obj\Debug\CAPITAL.csproj.GenerateResourc
 D:\TRABAJOS\Capital-MicroMercado\TALLER\obj\Debug\CAPITAL.csproj.CoreCompileInputs.cache
 D:\TRABAJOS\Capital-MicroMercado\TALLER\obj\Debug\TALLER.exe
 D:\TRABAJOS\Capital-MicroMercado\TALLER\obj\Debug\TALLER.pdb
+E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.Vista.FormCreditos.resources

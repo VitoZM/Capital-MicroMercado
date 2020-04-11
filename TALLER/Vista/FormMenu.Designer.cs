@@ -911,6 +911,7 @@
             this.btnCreditos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCreditos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCreditos.UseVisualStyleBackColor = false;
+            this.btnCreditos.Click += new System.EventHandler(this.btnCreditos_Click);
             // 
             // btnCuentas
             // 

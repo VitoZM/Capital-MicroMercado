@@ -74,6 +74,8 @@ namespace TALLER.Vista
 
         private void cargarPie()
         {
+            if (listaVenta.PAGO == "CREDITO")
+                this.btnPagar.Visible = true;
             this.txtBoxEfectivo.Text = this.listaVenta.EFECTIVO.ToString();
             this.txtBoxCambio.Text = this.listaVenta.CAMBIO.ToString();
             this.txtBoxPago.Text = this.listaVenta.PAGO.ToString();
@@ -89,6 +91,17 @@ namespace TALLER.Vista
                 string descripcion = this.txtBoxDescripcion.Text;
                 bd.cancelarVenta(listaVenta.IDVENTA, descripcion);
                 MessageBox.Show("¡VENTA CANCELADA EXITOSAMENTE!");
+                DialogResult = System.Windows.Forms.DialogResult.OK;
+            }
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿SEGURO QUE DESEA PAGAR LA VENTA?", "PAGAR VENTA", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                bd.pagarCredito(listaVenta.IDVENTA);
+                MessageBox.Show("¡VENTA PAGADA EXITOSAMENTE!");
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }
         }

@@ -35,6 +35,88 @@ namespace TALLER.Controlador
             this.conn.Close();
         }
 
+        public List<Cliente> listarClientesDeudas()
+        {
+            try
+            {
+                string comando = "SELECT * FROM LISTARCLIENTESDEUDAS";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                SqlDataReader myReader = null;
+                myReader = cmd.ExecuteReader();
+                List<Cliente> lis = new List<Cliente>();
+                while (myReader.Read())
+                {
+                    string ci = myReader["CICliente"].ToString();
+                    string nombres = myReader["Nombres"].ToString();
+                    string telefono = myReader["DEUDA"].ToString();
+
+                    Cliente cli = new Cliente(0, ci, nombres, telefono);
+                    lis.Add(cli);
+                }
+                this.conn.Close();
+                return lis;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return null;
+        }
+
+        public List<ListaVenta> listarDeudasCliente(Cliente c)
+        {
+            string comando = "EXEC LISTARDEUDASCLIENTE '" + c.CICLIENTE + "'";
+            SqlCommand cmd = new SqlCommand();
+            this.conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = comando;
+            SqlDataReader myReader = null;
+            myReader = cmd.ExecuteReader();
+            List<ListaVenta> lis = new List<ListaVenta>();
+            while (myReader.Read())
+            {
+                int id = convertirEntero(myReader["IDVENTA"].ToString());
+                string vendedor = myReader["VENDEDOR"].ToString();
+                string cliente = myReader["CLIENTE"].ToString();
+                string ciCliente = myReader["CICLIENTE"].ToString();
+                string fecha = myReader["fecha"].ToString();
+                decimal costoTotal = convertirDecimal(myReader["costototal"].ToString());
+                decimal efectivo = convertirDecimal(myReader["efectivo"].ToString());
+                decimal cambio = convertirDecimal(myReader["cambio"].ToString());
+                string pago = myReader["pago"].ToString();
+                string estado = myReader["estado"].ToString();
+                string descripcion = myReader["DESCRIPCION"].ToString();
+
+                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, vendedor, cliente, ciCliente, descripcion);
+                lis.Add(ven);
+            }
+            this.conn.Close();
+            return lis;
+        }
+
+        internal void pagarCredito(int iDVENTA)
+        {
+            try
+            {
+                string comando = "EXEC PAGARCREDITO " + iDVENTA;
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                cmd.ExecuteNonQuery();
+                this.conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+        }
+
         public decimal obtenerComprasHoy(int iDUSUARIO)
         {
             try

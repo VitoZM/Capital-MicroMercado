@@ -104,6 +104,12 @@
     <Compile Include="Vista\FormControlProductos.Designer.cs">
       <DependentUpon>FormControlProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormCreditos.Designer.cs">
+      <DependentUpon>FormCreditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormInversion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormControlProductos.resx">
       <DependentUpon>FormControlProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormCreditos.resx">
+      <DependentUpon>FormCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormInversion.resx">
       <DependentUpon>FormInversion.cs</DependentUpon>
