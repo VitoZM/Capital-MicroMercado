@@ -246,7 +246,7 @@
             this.panel1.Controls.Add(this.dgvVentas);
             this.panel1.Location = new System.Drawing.Point(7, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 359);
+            this.panel1.Size = new System.Drawing.Size(851, 203);
             this.panel1.TabIndex = 67;
             // 
             // dgvVentas
@@ -290,7 +290,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVentas.Size = new System.Drawing.Size(851, 346);
+            this.dgvVentas.Size = new System.Drawing.Size(847, 194);
             this.dgvVentas.TabIndex = 9;
             // 
             // txtBoxIngresos
@@ -447,7 +447,7 @@
             this.panel5.Controls.Add(label5);
             this.panel5.Controls.Add(label8);
             this.panel5.Controls.Add(this.txtBoxEgresos);
-            this.panel5.Location = new System.Drawing.Point(442, 391);
+            this.panel5.Location = new System.Drawing.Point(442, 235);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(412, 192);
             this.panel5.TabIndex = 75;
@@ -471,7 +471,7 @@
             this.panel4.Controls.Add(label3);
             this.panel4.Controls.Add(this.txtBoxGastos);
             this.panel4.Controls.Add(this.txtBoxCompras);
-            this.panel4.Location = new System.Drawing.Point(3, 589);
+            this.panel4.Location = new System.Drawing.Point(7, 433);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(406, 100);
             this.panel4.TabIndex = 74;
@@ -502,7 +502,7 @@
             this.panel2.Controls.Add(this.txtBoxCredito);
             this.panel2.Controls.Add(this.txtBoxEfectivo);
             this.panel2.Controls.Add(this.txtBoxInversiones);
-            this.panel2.Location = new System.Drawing.Point(3, 391);
+            this.panel2.Location = new System.Drawing.Point(7, 235);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(406, 192);
             this.panel2.TabIndex = 73;

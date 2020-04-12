@@ -71,6 +71,7 @@ namespace TALLER.CapaVista
 
         private void cargarDatos()
         {
+            tabla.Rows.Clear();
             if (ban)
                 listaVentas = bd.listarVentas(usuario);
             else
@@ -79,7 +80,6 @@ namespace TALLER.CapaVista
             foreach (ListaVenta v in listaVentas)
                 tabla.Rows.Add(new Object[] { v.IDVENTA, v.NOMBREUSUARIO, v.NOMBRECLIENTE, v.FECHA, v.COSTOTOTAL, v.PAGO, v.EFECTIVO, v.CAMBIO, v.ESTADO });
 
-            this.dgvIngresos.Rows.Clear();
             this.dgvIngresos.DataSource = tabla;
         }
 
@@ -105,7 +105,7 @@ namespace TALLER.CapaVista
                             DialogResult = System.Windows.Forms.DialogResult.OK;
                             return;
                         }
-                        MessageBox.Show("PRESIONE BOTON INGRESOS NUEVAMENTE PARA ACTUALIZAR");
+                        cargarDatos();
                     }
                     break;
                 }
