@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TALLER.ClasesVista;
 using TALLER.Modelo;
 using TALLER.Controlador;
+using Microsoft.Reporting.WinForms;
 
 namespace TALLER.Vista
 {
@@ -108,7 +109,7 @@ namespace TALLER.Vista
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            InformePrueba frm = new InformePrueba();
+            FormFactura frm = new FormFactura(listaVenta.IDVENTA);
             frm.ShowDialog();
         }
     }

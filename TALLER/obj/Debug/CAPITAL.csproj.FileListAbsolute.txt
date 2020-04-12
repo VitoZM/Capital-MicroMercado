@@ -1,7 +1,6 @@
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\TALLER.exe.config
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\TALLER.exe
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\TALLER.pdb
-E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\CAPITAL.csprojAssemblyReference.cache
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.CapaVista.FormAlmacenamiento.resources
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.CapaVista.FormMenu.resources
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.CapaVista.FormPedido.resources
@@ -119,7 +118,9 @@ E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\pt\Microsoft.ReportViewer.WinForms
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.Vista.InformePrueba.resources
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\CAPITAL.csproj.CopyComplete
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\RdlCompile.cache
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\RdlCompile.compiled
+E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\CAPITAL.csprojAssemblyReference.cache
+E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\Informes\Factura.rdlc
+E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.Vista.FormFactura.resources
