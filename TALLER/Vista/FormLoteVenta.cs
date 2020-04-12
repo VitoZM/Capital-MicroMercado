@@ -105,5 +105,11 @@ namespace TALLER.Vista
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            InformePrueba frm = new InformePrueba();
+            frm.ShowDialog();
+        }
     }
 }
