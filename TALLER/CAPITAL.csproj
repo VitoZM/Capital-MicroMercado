@@ -69,6 +69,7 @@
     <Compile Include="ClasesVista\ListaLoteVenta.cs" />
     <Compile Include="ClasesVista\ListaVenta.cs" />
     <Compile Include="Controlador\BaseDatos.cs" />
+    <Compile Include="Controlador\Conversion.cs" />
     <Compile Include="Controlador\Utilities.cs" />
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Compra.cs" />

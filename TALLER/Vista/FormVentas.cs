@@ -99,8 +99,8 @@ namespace TALLER.CapaVista
                 this.dgvVenta.Rows[fila].Cells[1].Value = producto.NOMBRE + " " + producto.MARCA;
                 this.dgvVenta.Rows[fila].Cells[2].Value = producto.CONTENIDO;
                 this.dgvVenta.Rows[fila].Cells[3].Value = producto.PRECIOVENTA;
-                this.dgvVenta.Rows[fila].Cells[4].Value = 0;
-                this.dgvVenta.Rows[fila].Cells[5].Value = 0;
+                this.dgvVenta.Rows[fila].Cells[4].Value = 1;
+                this.dgvVenta.Rows[fila].Cells[5].Value = producto.PRECIOVENTA;
                 this.dgvVenta.Rows[fila].Cells[6].Value = producto.IDPRODUCTO;
                 this.dgvVenta.ClearSelection();
                 this.dgvVenta.Rows[fila].Cells[4].Selected = true;
@@ -206,7 +206,12 @@ namespace TALLER.CapaVista
         {
             int fila = this.dgvVenta.Rows.Count - 1;
             if (fila > -1)
-                this.dgvVenta.Rows[fila].Cells[4].Value = this.txtBoxCantidad.Text;
+            {
+                if (this.txtBoxCantidad.Text == "")
+                    this.dgvVenta.Rows[fila].Cells[4].Value = 1;
+                else
+                    this.dgvVenta.Rows[fila].Cells[4].Value = this.txtBoxCantidad.Text;
+            }
         }
 
         private void txtBoxCantidad_KeyDown(object sender, KeyEventArgs e)
