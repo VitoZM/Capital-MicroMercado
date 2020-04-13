@@ -43,8 +43,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label15;
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.txtBoxIngresos = new System.Windows.Forms.TextBox();
             this.txtBoxTarjeta = new System.Windows.Forms.TextBox();
@@ -64,6 +67,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
+            this.dgvTarjetas = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             label20 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -76,12 +81,13 @@
             label8 = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
             this.SuspendLayout();
             // 
             // label20
@@ -222,7 +228,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(18, 144);
+            label1.Location = new System.Drawing.Point(18, 179);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(192, 24);
             label1.TabIndex = 71;
@@ -239,15 +245,6 @@
             this.label4.Size = new System.Drawing.Size(111, 24);
             this.label4.TabIndex = 1;
             this.label4.Text = "ARQUEOS";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dgvVentas);
-            this.panel1.Location = new System.Drawing.Point(7, 26);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 203);
-            this.panel1.TabIndex = 67;
             // 
             // dgvVentas
             // 
@@ -278,7 +275,7 @@
             this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvVentas.Location = new System.Drawing.Point(-1, 3);
+            this.dgvVentas.Location = new System.Drawing.Point(7, 567);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -290,8 +287,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVentas.Size = new System.Drawing.Size(847, 194);
+            this.dgvVentas.Size = new System.Drawing.Size(847, 39);
             this.dgvVentas.TabIndex = 9;
+            this.dgvVentas.Visible = false;
             // 
             // txtBoxIngresos
             // 
@@ -313,6 +311,7 @@
             this.txtBoxTarjeta.ReadOnly = true;
             this.txtBoxTarjeta.Size = new System.Drawing.Size(166, 22);
             this.txtBoxTarjeta.TabIndex = 70;
+            this.txtBoxTarjeta.Text = "0";
             // 
             // txtBoxCredito
             // 
@@ -323,6 +322,7 @@
             this.txtBoxCredito.ReadOnly = true;
             this.txtBoxCredito.Size = new System.Drawing.Size(166, 22);
             this.txtBoxCredito.TabIndex = 70;
+            this.txtBoxCredito.Text = "0";
             // 
             // txtBoxEfectivo
             // 
@@ -333,6 +333,7 @@
             this.txtBoxEfectivo.ReadOnly = true;
             this.txtBoxEfectivo.Size = new System.Drawing.Size(166, 22);
             this.txtBoxEfectivo.TabIndex = 70;
+            this.txtBoxEfectivo.Text = "0";
             // 
             // txtBoxInversiones
             // 
@@ -403,11 +404,12 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.dgvTarjetas);
+            this.panel3.Controls.Add(this.dgvVentas);
             this.panel3.Controls.Add(this.btnCerrarCaja);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(12, 12);
             this.panel3.Name = "panel3";
@@ -426,7 +428,7 @@
             this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarCaja.ForeColor = System.Drawing.Color.Silver;
             this.btnCerrarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarCaja.Location = new System.Drawing.Point(518, 613);
+            this.btnCerrarCaja.Location = new System.Drawing.Point(570, 632);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(284, 61);
             this.btnCerrarCaja.TabIndex = 76;
@@ -441,22 +443,24 @@
             this.panel5.Controls.Add(label14);
             this.panel5.Controls.Add(label20);
             this.panel5.Controls.Add(this.txtBoxIngresos);
+            this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.txtBoxEfectivoTotal);
             this.panel5.Controls.Add(this.txtBoxMontoTotal);
+            this.panel5.Controls.Add(label15);
             this.panel5.Controls.Add(label1);
             this.panel5.Controls.Add(label5);
             this.panel5.Controls.Add(label8);
             this.panel5.Controls.Add(this.txtBoxEgresos);
             this.panel5.Location = new System.Drawing.Point(442, 235);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(412, 192);
+            this.panel5.Size = new System.Drawing.Size(412, 220);
             this.panel5.TabIndex = 75;
             // 
             // txtBoxEfectivoTotal
             // 
             this.txtBoxEfectivoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxEfectivoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEfectivoTotal.Location = new System.Drawing.Point(245, 141);
+            this.txtBoxEfectivoTotal.Location = new System.Drawing.Point(245, 176);
             this.txtBoxEfectivoTotal.Name = "txtBoxEfectivoTotal";
             this.txtBoxEfectivoTotal.ReadOnly = true;
             this.txtBoxEfectivoTotal.Size = new System.Drawing.Size(147, 29);
@@ -471,7 +475,7 @@
             this.panel4.Controls.Add(label3);
             this.panel4.Controls.Add(this.txtBoxGastos);
             this.panel4.Controls.Add(this.txtBoxCompras);
-            this.panel4.Location = new System.Drawing.Point(7, 433);
+            this.panel4.Location = new System.Drawing.Point(7, 461);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(406, 100);
             this.panel4.TabIndex = 74;
@@ -504,7 +508,7 @@
             this.panel2.Controls.Add(this.txtBoxInversiones);
             this.panel2.Location = new System.Drawing.Point(7, 235);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(406, 192);
+            this.panel2.Size = new System.Drawing.Size(406, 220);
             this.panel2.TabIndex = 73;
             // 
             // label12
@@ -519,6 +523,74 @@
             this.label12.TabIndex = 74;
             this.label12.Text = "INGRESOS";
             // 
+            // dgvTarjetas
+            // 
+            this.dgvTarjetas.AllowUserToAddRows = false;
+            this.dgvTarjetas.AllowUserToDeleteRows = false;
+            this.dgvTarjetas.AllowUserToOrderColumns = true;
+            this.dgvTarjetas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dgvTarjetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvTarjetas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.dgvTarjetas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTarjetas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTarjetas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTarjetas.ColumnHeadersHeight = 30;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTarjetas.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTarjetas.EnableHeadersVisualStyles = false;
+            this.dgvTarjetas.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvTarjetas.Location = new System.Drawing.Point(7, 26);
+            this.dgvTarjetas.Name = "dgvTarjetas";
+            this.dgvTarjetas.ReadOnly = true;
+            this.dgvTarjetas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTarjetas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTarjetas.Size = new System.Drawing.Size(847, 203);
+            this.dgvTarjetas.TabIndex = 77;
+            this.dgvTarjetas.Visible = false;
+            // 
+            // label15
+            // 
+            label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label15.AutoSize = true;
+            label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label15.ForeColor = System.Drawing.SystemColors.Control;
+            label15.Location = new System.Drawing.Point(18, 144);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(192, 24);
+            label15.TabIndex = 71;
+            label15.Text = "TOTAL EFECTIVO:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(245, 141);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(147, 29);
+            this.textBox1.TabIndex = 72;
+            this.textBox1.Text = "0";
+            // 
             // FormArqueo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,7 +601,6 @@
             this.Name = "FormArqueo";
             this.Text = "ARQUEOS";
             this.Load += new System.EventHandler(this.FormArqueos_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -539,6 +610,7 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,7 +618,6 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvVentas;
         private System.Windows.Forms.TextBox txtBoxIngresos;
         private System.Windows.Forms.TextBox txtBoxTarjeta;
@@ -566,5 +637,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBoxEfectivoTotal;
         private System.Windows.Forms.Button btnCerrarCaja;
+        private System.Windows.Forms.DataGridView dgvTarjetas;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

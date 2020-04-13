@@ -94,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).BeginInit();
             this.panelHeader.SuspendLayout();
-            this.panelContenedor.SuspendLayout();
             this.pnlIngresos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnINICIO)).BeginInit();
             this.MenuVertical.SuspendLayout();
@@ -198,8 +197,6 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.panelContenedor.Controls.Add(this.button1);
-            this.panelContenedor.Controls.Add(this.btnTarjetas);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(250, 40);
             this.panelContenedor.Name = "panelContenedor";
@@ -438,6 +435,8 @@
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.MenuVertical.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MenuVertical.Controls.Add(this.btnTarjetas);
+            this.MenuVertical.Controls.Add(this.button1);
             this.MenuVertical.Controls.Add(this.pnlIngresos);
             this.MenuVertical.Controls.Add(this.pnlEgresos);
             this.MenuVertical.Controls.Add(this.pnlConsultas);
@@ -476,7 +475,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(162, 261);
+            this.button1.Location = new System.Drawing.Point(-3, 618);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(253, 55);
             this.button1.TabIndex = 72;
@@ -1019,7 +1018,7 @@
             this.btnTarjetas.ForeColor = System.Drawing.Color.White;
             this.btnTarjetas.Image = ((System.Drawing.Image)(resources.GetObject("btnTarjetas.Image")));
             this.btnTarjetas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTarjetas.Location = new System.Drawing.Point(162, 346);
+            this.btnTarjetas.Location = new System.Drawing.Point(-3, 669);
             this.btnTarjetas.Name = "btnTarjetas";
             this.btnTarjetas.Size = new System.Drawing.Size(253, 37);
             this.btnTarjetas.TabIndex = 73;
@@ -1051,7 +1050,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnmenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconrestaurar)).EndInit();
             this.panelHeader.ResumeLayout(false);
-            this.panelContenedor.ResumeLayout(false);
             this.pnlIngresos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnINICIO)).EndInit();
             this.MenuVertical.ResumeLayout(false);
