@@ -35,6 +35,90 @@ namespace TALLER.Controlador
             this.conn.Close();
         }
 
+        internal object obtenerMontoPrestadoTarjetas()
+        {
+            try
+            {
+                string comando = "EXEC OBTENERMONTOPRESTADOTARJETAS";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal total = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
+        internal object obtenerMontoEfectivoTarjetas()
+        {
+            try
+            {
+                string comando = "EXEC OBTENERMONTOEFECTIVOTARJETAS";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal total = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
+        internal object obtenerMontoDeudaTarjetas()
+        {
+            try
+            {
+                string comando = "EXEC OBTENERMONTODEUDATARJETAS";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal total = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
+        public decimal obtenerMontoTotalTarjetas()
+        {
+            try
+            {
+                string comando = "EXEC OBTENERMONTOTOTALTARJETAS";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal total = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
         public List<Cliente> listarClientesDeudas()
         {
             try
@@ -67,6 +151,69 @@ namespace TALLER.Controlador
             return null;
         }
 
+        public decimal obtenerEfectivoCajaTarjeta()
+        {
+            try
+            {
+                string comando = "EXEC OBTENEREFECTIVOCAJATARJETA";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal efectivo = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return efectivo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
+        public decimal obtenerTarjetasHoy(int iDUSUARIO)
+        {
+            try
+            {
+                string comando = "EXEC OBTENERTARJETASHOY " + iDUSUARIO;
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal tarjetas = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return tarjetas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
+        public decimal obtenerTarjetasEfectivoHoy(int iDUSUARIO)
+        {
+            try
+            {
+                string comando = "EXEC OBTENERTARJETASEFECTIVOHOY " + iDUSUARIO;
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal tarjetas = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return tarjetas;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
         public List<ListaVenta> listarDeudasCliente(Cliente c)
         {
             string comando = "EXEC LISTARDEUDASCLIENTE '" + c.CICLIENTE + "'";
@@ -90,19 +237,39 @@ namespace TALLER.Controlador
                 string pago = myReader["pago"].ToString();
                 string estado = myReader["estado"].ToString();
                 string descripcion = myReader["DESCRIPCION"].ToString();
+                decimal costoTarjeta = convertirDecimal(myReader["COSTOTARJETA"].ToString());
 
-                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, vendedor, cliente, ciCliente, descripcion);
+                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, costoTarjeta,vendedor, cliente, ciCliente, descripcion);
                 lis.Add(ven);
             }
             this.conn.Close();
             return lis;
         }
 
-        internal void pagarCredito(int iDVENTA)
+        public void compraTarjeta(decimal costoTotal, decimal efectivo, decimal deuda)
         {
             try
             {
-                string comando = "EXEC PAGARCREDITO " + iDVENTA;
+                string comando = "EXEC COMPRATARJETA " + sinComas(costoTotal) + "," + sinComas(efectivo) + "," + sinComas(deuda);
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                cmd.ExecuteNonQuery();
+                this.conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+        }
+
+        public void pagarCredito(int iDVENTA,int idUsuario)
+        {
+            try
+            {
+                string comando = "EXEC PAGARCREDITO " + iDVENTA + "," + idUsuario;
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;
@@ -121,7 +288,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "OBTENERMONTOCOMPRASHOY " + iDUSUARIO;
+                string comando = "EXEC OBTENERMONTOCOMPRASHOY " + iDUSUARIO;
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;
@@ -177,7 +344,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "OBTENERGASTOSHOY " + iDUSUARIO;
+                string comando = "EXEC OBTENERGASTOSHOY " + iDUSUARIO;
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;
@@ -197,7 +364,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "OBTENERCAMBIOSHOY " + iDUSUARIO;
+                string comando = "EXEC OBTENERCAMBIOSHOY " + iDUSUARIO;
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;
@@ -284,7 +451,7 @@ namespace TALLER.Controlador
             return 0;
         }
 
-        internal decimal obtenerInversionesHoy(int iDUSUARIO)
+        public decimal obtenerInversionesHoy(int iDUSUARIO)
         {
             try
             {
@@ -873,7 +1040,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "EXEC INSERTARVENTA '" + venta.IDUSUARIO + "','" + cliente.CICLIENTE + "','" + cliente.NOMBRES + "','" + cliente.TELEFONO + "'," + sinComas(venta.COSTOTOTAL) + "," + sinComas(venta.EFECTIVO) + "," + sinComas(venta.CAMBIO) + ",'" + venta.PAGO + "'";
+                string comando = "EXEC INSERTARVENTA '" + venta.IDUSUARIO + "','" + cliente.CICLIENTE + "','" + cliente.NOMBRES + "','" + cliente.TELEFONO + "'," + sinComas(venta.COSTOTOTAL) + "," + sinComas(venta.EFECTIVO) + "," + sinComas(venta.CAMBIO) + ",'" + venta.PAGO + "'," + sinComas(venta.COSTOTARJETA);
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;
@@ -1023,8 +1190,9 @@ namespace TALLER.Controlador
                 string pago = myReader["pago"].ToString();
                 string estado = myReader["estado"].ToString();
                 string descripcion = myReader["DESCRIPCION"].ToString();
+                decimal costoTarjeta = convertirDecimal(myReader["COSTOTARJETA"].ToString());
 
-                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, vendedor, cliente, ciCliente, descripcion);
+                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, costoTarjeta,vendedor, cliente, ciCliente, descripcion);
                 lis.Add(ven);
             }
             this.conn.Close();

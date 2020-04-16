@@ -37,11 +37,13 @@
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label6;
+            System.Windows.Forms.Label label7;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblDetalle = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtBoxTarjeta = new System.Windows.Forms.TextBox();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnPagar = new System.Windows.Forms.Button();
             this.txtBoxDescripcion = new System.Windows.Forms.TextBox();
@@ -72,6 +74,7 @@
             label5 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.SuspendLayout();
@@ -82,7 +85,7 @@
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(468, 431);
+            label9.Location = new System.Drawing.Point(618, 431);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(117, 16);
             label9.TabIndex = 67;
@@ -94,7 +97,7 @@
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(41, 463);
+            label10.Location = new System.Drawing.Point(3, 463);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(69, 16);
             label10.TabIndex = 68;
@@ -106,7 +109,7 @@
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label8.ForeColor = System.Drawing.SystemColors.Control;
-            label8.Location = new System.Drawing.Point(41, 431);
+            label8.Location = new System.Drawing.Point(3, 431);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(86, 16);
             label8.TabIndex = 69;
@@ -154,7 +157,7 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label5.ForeColor = System.Drawing.SystemColors.Control;
-            label5.Location = new System.Drawing.Point(292, 431);
+            label5.Location = new System.Drawing.Point(228, 431);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(54, 16);
             label5.TabIndex = 67;
@@ -184,6 +187,18 @@
             label6.TabIndex = 81;
             label6.Text = "DESCRIPCION:";
             // 
+            // label7
+            // 
+            label7.Anchor = System.Windows.Forms.AnchorStyles.None;
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.ForeColor = System.Drawing.SystemColors.Control;
+            label7.Location = new System.Drawing.Point(424, 431);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(91, 16);
+            label7.TabIndex = 84;
+            label7.Text = "TARJETAS:";
+            // 
             // lblDetalle
             // 
             this.lblDetalle.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -199,6 +214,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(label7);
+            this.panel3.Controls.Add(this.txtBoxTarjeta);
             this.panel3.Controls.Add(this.btnReporte);
             this.panel3.Controls.Add(this.btnPagar);
             this.panel3.Controls.Add(label6);
@@ -227,6 +244,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(859, 586);
             this.panel3.TabIndex = 66;
+            // 
+            // txtBoxTarjeta
+            // 
+            this.txtBoxTarjeta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTarjeta.Location = new System.Drawing.Point(521, 421);
+            this.txtBoxTarjeta.Name = "txtBoxTarjeta";
+            this.txtBoxTarjeta.ReadOnly = true;
+            this.txtBoxTarjeta.Size = new System.Drawing.Size(91, 31);
+            this.txtBoxTarjeta.TabIndex = 85;
             // 
             // btnReporte
             // 
@@ -355,7 +382,7 @@
             // 
             this.txtBoxCosto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCosto.Location = new System.Drawing.Point(591, 421);
+            this.txtBoxCosto.Location = new System.Drawing.Point(741, 421);
             this.txtBoxCosto.Name = "txtBoxCosto";
             this.txtBoxCosto.ReadOnly = true;
             this.txtBoxCosto.Size = new System.Drawing.Size(92, 31);
@@ -365,7 +392,7 @@
             // 
             this.txtBoxCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCambio.Location = new System.Drawing.Point(142, 453);
+            this.txtBoxCambio.Location = new System.Drawing.Point(104, 453);
             this.txtBoxCambio.Name = "txtBoxCambio";
             this.txtBoxCambio.ReadOnly = true;
             this.txtBoxCambio.Size = new System.Drawing.Size(92, 31);
@@ -375,7 +402,7 @@
             // 
             this.txtBoxPago.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPago.Location = new System.Drawing.Point(352, 421);
+            this.txtBoxPago.Location = new System.Drawing.Point(288, 421);
             this.txtBoxPago.Name = "txtBoxPago";
             this.txtBoxPago.ReadOnly = true;
             this.txtBoxPago.Size = new System.Drawing.Size(110, 31);
@@ -385,7 +412,7 @@
             // 
             this.txtBoxEfectivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEfectivo.Location = new System.Drawing.Point(142, 421);
+            this.txtBoxEfectivo.Location = new System.Drawing.Point(104, 421);
             this.txtBoxEfectivo.Name = "txtBoxEfectivo";
             this.txtBoxEfectivo.ReadOnly = true;
             this.txtBoxEfectivo.Size = new System.Drawing.Size(92, 31);
@@ -427,7 +454,7 @@
             this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVenta.EnableHeadersVisualStyles = false;
             this.dgvVenta.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvVenta.Location = new System.Drawing.Point(44, 171);
+            this.dgvVenta.Location = new System.Drawing.Point(18, 175);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
             this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -439,7 +466,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVenta.Size = new System.Drawing.Size(741, 240);
+            this.dgvVenta.Size = new System.Drawing.Size(824, 240);
             this.dgvVenta.TabIndex = 66;
             // 
             // columnaCodigo
@@ -455,7 +482,7 @@
             this.columnaProducto.HeaderText = "PRODUCTO";
             this.columnaProducto.Name = "columnaProducto";
             this.columnaProducto.ReadOnly = true;
-            this.columnaProducto.Width = 180;
+            this.columnaProducto.Width = 200;
             // 
             // columnaPresentacion
             // 
@@ -503,6 +530,7 @@
             this.ClientSize = new System.Drawing.Size(889, 610);
             this.Controls.Add(this.panel3);
             this.Name = "FormLoteVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DETALLE DE VENTA";
             this.Load += new System.EventHandler(this.FormLoteVenta_Load);
             this.panel3.ResumeLayout(false);
@@ -531,6 +559,8 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.TextBox txtBoxDescripcion;
         private System.Windows.Forms.Button btnPagar;
+        private System.Windows.Forms.Button btnReporte;
+        private System.Windows.Forms.TextBox txtBoxTarjeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaPresentacion;
@@ -538,6 +568,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCosto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaId;
-        private System.Windows.Forms.Button btnReporte;
     }
 }

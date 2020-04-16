@@ -17,6 +17,7 @@ namespace TALLER.Modelo
         private decimal cambio;
         private string estado;
         private string pago;
+        private decimal costoTarjeta;
 
         public int IDVENTA
         {
@@ -81,7 +82,13 @@ namespace TALLER.Modelo
             }
         }
 
-        public Venta(int idVenta,int idUsuario,int idCliente,string fecha,decimal costototal,decimal efectivo,decimal cambio,string estado,string pago)
+        public decimal COSTOTARJETA
+        {
+            get { return costoTarjeta; }
+            set { costoTarjeta = value; }
+        }
+
+        public Venta(int idVenta,int idUsuario,int idCliente,string fecha,decimal costototal,decimal efectivo,decimal cambio,string estado,string pago, decimal costoTarjeta)
         {
             this.IDVENTA = idVenta;
             this.IDUSUARIO = idUsuario;
@@ -92,7 +99,7 @@ namespace TALLER.Modelo
             this.CAMBIO = cambio;
             this.ESTADO = estado;
             this.PAGO = pago;
-
+            this.COSTOTARJETA = costoTarjeta;
         }
     }
 }

@@ -41,8 +41,8 @@ namespace TALLER.ClasesVista
             set { descripcion = value; }
         }
 
-        public ListaVenta(int idVenta, int idUsuario, int idCliente, string fecha, decimal costototal, decimal efectivo, decimal cambio, string estado, string pago, string nombreUsuario, string nombreCliente, string ciCliente,string descripcion)
-            :base(idVenta,idUsuario,idCliente,fecha,costototal,efectivo,cambio,estado,pago)
+        public ListaVenta(int idVenta, int idUsuario, int idCliente, string fecha, decimal costototal, decimal efectivo, decimal cambio, string estado, string pago, decimal costoTarjeta, string nombreUsuario, string nombreCliente, string ciCliente,string descripcion)
+            :base(idVenta,idUsuario,idCliente,fecha,costototal,efectivo,cambio,estado,pago,costoTarjeta)
         {
             this.NOMBRECLIENTE = nombreCliente;
             this.NOMBREUSUARIO = nombreUsuario;

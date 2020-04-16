@@ -23,13 +23,11 @@ namespace TALLER.CapaVista
         public FormAlmacenamiento()
         {
             InitializeComponent();
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void FormAlmacenamiento_Load(object sender, EventArgs e)
         {
             this.txtBoxCodigo.Focus();
-            this.StartPosition = FormStartPosition.CenterScreen;
             armarTabla();
             cargarDatos();
         }

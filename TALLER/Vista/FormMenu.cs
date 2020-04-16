@@ -396,10 +396,18 @@ namespace TALLER.CapaVista
 
         private void btnConsultas_Click(object sender, EventArgs e)
         {
+            /*int yDesplazamiento = 180;
+
             if (!banRecursos)
+            {
                 cambiarControl(pnlConsultas, ref banConsultas);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
+            }
             else
+            {
                 cambiarControl(pnlConsultas, ref banConsultas);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
+            }*/
         }
 
         private void btnDistribuidoras_Click(object sender, EventArgs e)
@@ -445,6 +453,13 @@ namespace TALLER.CapaVista
         private void button1_Click_2(object sender, EventArgs e)
         {
             FormArqueoTotal frm = new FormArqueoTotal();
+            frm.FormClosed += new FormClosedEventHandler(mostrarlogoAlCerrarForm);
+            AbrirFormInPanel(frm);
+        }
+
+        private void btnTarjetas_Click(object sender, EventArgs e)
+        {
+            FormTarjetas frm = new FormTarjetas();
             frm.FormClosed += new FormClosedEventHandler(mostrarlogoAlCerrarForm);
             AbrirFormInPanel(frm);
         }

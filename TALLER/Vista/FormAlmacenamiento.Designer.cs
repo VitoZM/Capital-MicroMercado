@@ -48,7 +48,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(368, 11);
+            label1.Location = new System.Drawing.Point(376, 11);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(203, 24);
             label1.TabIndex = 1;
@@ -60,7 +60,7 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(299, 85);
+            label3.Location = new System.Drawing.Point(307, 85);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(154, 16);
             label3.TabIndex = 63;
@@ -73,15 +73,15 @@
             this.panel1.Controls.Add(label3);
             this.panel1.Controls.Add(label1);
             this.panel1.Controls.Add(this.dgvAlmacenamiento);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 572);
+            this.panel1.Size = new System.Drawing.Size(1116, 572);
             this.panel1.TabIndex = 66;
             // 
             // txtBoxCodigo
             // 
             this.txtBoxCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxCodigo.Location = new System.Drawing.Point(477, 81);
+            this.txtBoxCodigo.Location = new System.Drawing.Point(485, 81);
             this.txtBoxCodigo.Name = "txtBoxCodigo";
             this.txtBoxCodigo.Size = new System.Drawing.Size(164, 20);
             this.txtBoxCodigo.TabIndex = 0;
@@ -128,7 +128,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAlmacenamiento.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAlmacenamiento.Size = new System.Drawing.Size(1092, 432);
+            this.dgvAlmacenamiento.Size = new System.Drawing.Size(1108, 445);
             this.dgvAlmacenamiento.TabIndex = 50;
             this.dgvAlmacenamiento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlmacenamiento_CellDoubleClick);
             // 
@@ -140,6 +140,7 @@
             this.ClientSize = new System.Drawing.Size(1120, 596);
             this.Controls.Add(this.panel1);
             this.Name = "FormAlmacenamiento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ALMACENAMIENTO";
             this.Load += new System.EventHandler(this.FormAlmacenamiento_Load);
             this.panel1.ResumeLayout(false);

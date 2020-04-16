@@ -39,22 +39,22 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label13;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.txtBoxPago = new System.Windows.Forms.ComboBox();
-            this.txtBoxCosto = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.btnRegistrar = new System.Windows.Forms.Button();
+            this.btnAlmacen = new System.Windows.Forms.Button();
+            this.txtBoxPago = new System.Windows.Forms.ComboBox();
+            this.btnBuscarProducto = new System.Windows.Forms.Button();
+            this.dgvVenta = new System.Windows.Forms.DataGridView();
+            this.txtBoxCosto = new System.Windows.Forms.TextBox();
+            this.txtBoxCodigo = new System.Windows.Forms.TextBox();
             this.txtBoxCambio = new System.Windows.Forms.TextBox();
             this.txtBoxEfectivo = new System.Windows.Forms.TextBox();
             this.btnProcesar = new System.Windows.Forms.Button();
-            this.btnAlmacen = new System.Windows.Forms.Button();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.dgvVenta = new System.Windows.Forms.DataGridView();
-            this.txtBoxCodigo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -93,7 +93,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.ForeColor = System.Drawing.SystemColors.Control;
-            label2.Location = new System.Drawing.Point(11, 13);
+            label2.Location = new System.Drawing.Point(3, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(156, 24);
             label2.TabIndex = 1;
@@ -105,7 +105,7 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(23, 55);
+            label3.Location = new System.Drawing.Point(15, 42);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(70, 16);
             label3.TabIndex = 1;
@@ -117,7 +117,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(32, 15);
+            label1.Location = new System.Drawing.Point(43, 15);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(172, 24);
             label1.TabIndex = 1;
@@ -129,7 +129,7 @@
             vEND_IDLabel.AutoSize = true;
             vEND_IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             vEND_IDLabel.ForeColor = System.Drawing.SystemColors.Control;
-            vEND_IDLabel.Location = new System.Drawing.Point(33, 49);
+            vEND_IDLabel.Location = new System.Drawing.Point(44, 49);
             vEND_IDLabel.Name = "vEND_IDLabel";
             vEND_IDLabel.Size = new System.Drawing.Size(70, 16);
             vEND_IDLabel.TabIndex = 1;
@@ -141,7 +141,7 @@
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.ForeColor = System.Drawing.SystemColors.Control;
-            label4.Location = new System.Drawing.Point(33, 80);
+            label4.Location = new System.Drawing.Point(44, 80);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(87, 16);
             label4.TabIndex = 1;
@@ -153,7 +153,7 @@
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label6.ForeColor = System.Drawing.SystemColors.Control;
-            label6.Location = new System.Drawing.Point(437, 80);
+            label6.Location = new System.Drawing.Point(448, 80);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(92, 16);
             label6.TabIndex = 1;
@@ -165,7 +165,7 @@
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label8.ForeColor = System.Drawing.SystemColors.Control;
-            label8.Location = new System.Drawing.Point(10, 419);
+            label8.Location = new System.Drawing.Point(2, 422);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(86, 16);
             label8.TabIndex = 63;
@@ -177,7 +177,7 @@
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(437, 419);
+            label9.Location = new System.Drawing.Point(608, 422);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(117, 16);
             label9.TabIndex = 63;
@@ -189,7 +189,7 @@
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(10, 451);
+            label10.Location = new System.Drawing.Point(2, 459);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(69, 16);
             label10.TabIndex = 63;
@@ -201,7 +201,7 @@
             label11.AutoSize = true;
             label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label11.ForeColor = System.Drawing.SystemColors.Control;
-            label11.Location = new System.Drawing.Point(384, 536);
+            label11.Location = new System.Drawing.Point(395, 536);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(70, 16);
             label11.TabIndex = 63;
@@ -213,7 +213,7 @@
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label13.ForeColor = System.Drawing.SystemColors.Control;
-            label13.Location = new System.Drawing.Point(226, 419);
+            label13.Location = new System.Drawing.Point(295, 423);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(54, 16);
             label13.TabIndex = 63;
@@ -241,9 +241,9 @@
             this.panel2.Controls.Add(this.txtBoxEfectivo);
             this.panel2.Controls.Add(label9);
             this.panel2.Controls.Add(this.btnProcesar);
-            this.panel2.Location = new System.Drawing.Point(12, 131);
+            this.panel2.Location = new System.Drawing.Point(2, 121);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(814, 521);
+            this.panel2.Size = new System.Drawing.Size(837, 531);
             this.panel2.TabIndex = 66;
             // 
             // btnCancelar
@@ -258,7 +258,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(538, 463);
+            this.btnCancelar.Location = new System.Drawing.Point(577, 471);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(120, 42);
             this.btnCancelar.TabIndex = 67;
@@ -267,6 +267,14 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4.Location = new System.Drawing.Point(482, 535);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(149, 20);
+            this.textBox4.TabIndex = 64;
             // 
             // btnRegistrar
             // 
@@ -280,7 +288,7 @@
             this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.Silver;
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistrar.Location = new System.Drawing.Point(664, 463);
+            this.btnRegistrar.Location = new System.Drawing.Point(703, 471);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(120, 42);
             this.btnRegistrar.TabIndex = 66;
@@ -289,6 +297,27 @@
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Visible = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // btnAlmacen
+            // 
+            this.btnAlmacen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            this.btnAlmacen.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnAlmacen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnAlmacen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAlmacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlmacen.ForeColor = System.Drawing.Color.Silver;
+            this.btnAlmacen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAlmacen.Location = new System.Drawing.Point(703, 26);
+            this.btnAlmacen.Name = "btnAlmacen";
+            this.btnAlmacen.Size = new System.Drawing.Size(109, 35);
+            this.btnAlmacen.TabIndex = 62;
+            this.btnAlmacen.Text = "ALMACEN";
+            this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAlmacen.UseVisualStyleBackColor = false;
+            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
             // 
             // txtBoxPago
             // 
@@ -300,37 +329,110 @@
             "EFECTIVO",
             "TARJETA",
             "CREDITO"});
-            this.txtBoxPago.Location = new System.Drawing.Point(286, 411);
+            this.txtBoxPago.Location = new System.Drawing.Point(355, 415);
             this.txtBoxPago.Name = "txtBoxPago";
             this.txtBoxPago.Size = new System.Drawing.Size(110, 28);
             this.txtBoxPago.TabIndex = 65;
             this.txtBoxPago.SelectedValueChanged += new System.EventHandler(this.txtBoxPago_SelectedValueChanged);
             this.txtBoxPago.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxPago_KeyDown);
             // 
+            // btnBuscarProducto
+            // 
+            this.btnBuscarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarProducto.ForeColor = System.Drawing.Color.Silver;
+            this.btnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(271, 29);
+            this.btnBuscarProducto.Name = "btnBuscarProducto";
+            this.btnBuscarProducto.Size = new System.Drawing.Size(109, 35);
+            this.btnBuscarProducto.TabIndex = 62;
+            this.btnBuscarProducto.Text = "BUSCAR";
+            this.btnBuscarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
+            // 
+            // dgvVenta
+            // 
+            this.dgvVenta.AllowUserToAddRows = false;
+            this.dgvVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgvVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvVenta.ColumnHeadersHeight = 30;
+            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnaCodigo,
+            this.columnaProducto,
+            this.columnaContenido,
+            this.columaPrecio,
+            this.columnaCantidad,
+            this.columnaCosto,
+            this.columnaId});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvVenta.EnableHeadersVisualStyles = false;
+            this.dgvVenta.GridColor = System.Drawing.Color.SteelBlue;
+            this.dgvVenta.Location = new System.Drawing.Point(7, 67);
+            this.dgvVenta.Name = "dgvVenta";
+            this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvVenta.Size = new System.Drawing.Size(816, 323);
+            this.dgvVenta.TabIndex = 9;
+            this.dgvVenta.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellValueChanged);
+            this.dgvVenta.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvVenta_RowsRemoved);
+            this.dgvVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvVenta_KeyDown);
+            // 
             // txtBoxCosto
             // 
             this.txtBoxCosto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCosto.Location = new System.Drawing.Point(560, 409);
+            this.txtBoxCosto.Location = new System.Drawing.Point(731, 412);
             this.txtBoxCosto.Name = "txtBoxCosto";
             this.txtBoxCosto.ReadOnly = true;
             this.txtBoxCosto.Size = new System.Drawing.Size(92, 31);
             this.txtBoxCosto.TabIndex = 64;
             this.txtBoxCosto.TextChanged += new System.EventHandler(this.txtBoxCosto_TextChanged);
             // 
-            // textBox4
+            // txtBoxCodigo
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Location = new System.Drawing.Point(471, 535);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(149, 20);
-            this.textBox4.TabIndex = 64;
+            this.txtBoxCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtBoxCodigo.Location = new System.Drawing.Point(116, 41);
+            this.txtBoxCodigo.Name = "txtBoxCodigo";
+            this.txtBoxCodigo.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxCodigo.TabIndex = 2;
+            this.txtBoxCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxCodigo_KeyDown);
             // 
             // txtBoxCambio
             // 
             this.txtBoxCambio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCambio.Location = new System.Drawing.Point(111, 441);
+            this.txtBoxCambio.Location = new System.Drawing.Point(103, 449);
             this.txtBoxCambio.Name = "txtBoxCambio";
             this.txtBoxCambio.ReadOnly = true;
             this.txtBoxCambio.Size = new System.Drawing.Size(92, 31);
@@ -340,7 +442,7 @@
             // 
             this.txtBoxEfectivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEfectivo.Location = new System.Drawing.Point(111, 409);
+            this.txtBoxEfectivo.Location = new System.Drawing.Point(103, 412);
             this.txtBoxEfectivo.Name = "txtBoxEfectivo";
             this.txtBoxEfectivo.Size = new System.Drawing.Size(92, 31);
             this.txtBoxEfectivo.TabIndex = 64;
@@ -359,7 +461,7 @@
             this.btnProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcesar.ForeColor = System.Drawing.Color.Silver;
             this.btnProcesar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcesar.Location = new System.Drawing.Point(664, 463);
+            this.btnProcesar.Location = new System.Drawing.Point(703, 471);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(120, 42);
             this.btnProcesar.TabIndex = 62;
@@ -367,108 +469,6 @@
             this.btnProcesar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProcesar.UseVisualStyleBackColor = false;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
-            // 
-            // btnAlmacen
-            // 
-            this.btnAlmacen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAlmacen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            this.btnAlmacen.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnAlmacen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnAlmacen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAlmacen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnAlmacen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlmacen.ForeColor = System.Drawing.Color.Silver;
-            this.btnAlmacen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAlmacen.Location = new System.Drawing.Point(578, 36);
-            this.btnAlmacen.Name = "btnAlmacen";
-            this.btnAlmacen.Size = new System.Drawing.Size(109, 35);
-            this.btnAlmacen.TabIndex = 62;
-            this.btnAlmacen.Text = "ALMACEN";
-            this.btnAlmacen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAlmacen.UseVisualStyleBackColor = false;
-            this.btnAlmacen.Click += new System.EventHandler(this.btnAlmacen_Click);
-            // 
-            // btnBuscarProducto
-            // 
-            this.btnBuscarProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBuscarProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            this.btnBuscarProducto.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnBuscarProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnBuscarProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnBuscarProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProducto.ForeColor = System.Drawing.Color.Silver;
-            this.btnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(279, 42);
-            this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(109, 35);
-            this.btnBuscarProducto.TabIndex = 62;
-            this.btnBuscarProducto.Text = "BUSCAR";
-            this.btnBuscarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscarProducto.UseVisualStyleBackColor = false;
-            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
-            // 
-            // dgvVenta
-            // 
-            this.dgvVenta.AllowUserToAddRows = false;
-            this.dgvVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dgvVenta.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.dgvVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvVenta.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvVenta.ColumnHeadersHeight = 30;
-            this.dgvVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnaCodigo,
-            this.columnaProducto,
-            this.columnaContenido,
-            this.columaPrecio,
-            this.columnaCantidad,
-            this.columnaCosto,
-            this.columnaId});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvVenta.EnableHeadersVisualStyles = false;
-            this.dgvVenta.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvVenta.Location = new System.Drawing.Point(15, 80);
-            this.dgvVenta.Name = "dgvVenta";
-            this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvVenta.Size = new System.Drawing.Size(769, 323);
-            this.dgvVenta.TabIndex = 9;
-            this.dgvVenta.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellValueChanged);
-            this.dgvVenta.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvVenta_RowsRemoved);
-            this.dgvVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvVenta_KeyDown);
-            // 
-            // txtBoxCodigo
-            // 
-            this.txtBoxCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtBoxCodigo.Location = new System.Drawing.Point(124, 54);
-            this.txtBoxCodigo.Name = "txtBoxCodigo";
-            this.txtBoxCodigo.Size = new System.Drawing.Size(149, 20);
-            this.txtBoxCodigo.TabIndex = 2;
-            this.txtBoxCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxCodigo_KeyDown);
             // 
             // panel1
             // 
@@ -482,9 +482,9 @@
             this.panel1.Controls.Add(label6);
             this.panel1.Controls.Add(label4);
             this.panel1.Controls.Add(vEND_IDLabel);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(814, 113);
+            this.panel1.Size = new System.Drawing.Size(837, 113);
             this.panel1.TabIndex = 65;
             // 
             // btnRegistro
@@ -499,7 +499,7 @@
             this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistro.ForeColor = System.Drawing.Color.Silver;
             this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistro.Location = new System.Drawing.Point(602, 38);
+            this.btnRegistro.Location = new System.Drawing.Point(613, 38);
             this.btnRegistro.Name = "btnRegistro";
             this.btnRegistro.Size = new System.Drawing.Size(109, 35);
             this.btnRegistro.TabIndex = 68;
@@ -520,7 +520,7 @@
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.Silver;
             this.btnBuscarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(303, 39);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(314, 39);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(109, 34);
             this.btnBuscarCliente.TabIndex = 62;
@@ -532,7 +532,7 @@
             // txtBoxTelefono
             // 
             this.txtBoxTelefono.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxTelefono.Location = new System.Drawing.Point(537, 79);
+            this.txtBoxTelefono.Location = new System.Drawing.Point(548, 79);
             this.txtBoxTelefono.Name = "txtBoxTelefono";
             this.txtBoxTelefono.Size = new System.Drawing.Size(174, 20);
             this.txtBoxTelefono.TabIndex = 2;
@@ -540,7 +540,7 @@
             // txtBoxNombres
             // 
             this.txtBoxNombres.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxNombres.Location = new System.Drawing.Point(131, 79);
+            this.txtBoxNombres.Location = new System.Drawing.Point(142, 79);
             this.txtBoxNombres.Name = "txtBoxNombres";
             this.txtBoxNombres.Size = new System.Drawing.Size(281, 20);
             this.txtBoxNombres.TabIndex = 2;
@@ -548,7 +548,7 @@
             // txtBoxCi
             // 
             this.txtBoxCi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxCi.Location = new System.Drawing.Point(131, 48);
+            this.txtBoxCi.Location = new System.Drawing.Point(142, 48);
             this.txtBoxCi.Name = "txtBoxCi";
             this.txtBoxCi.Size = new System.Drawing.Size(166, 20);
             this.txtBoxCi.TabIndex = 2;
@@ -621,7 +621,7 @@
             this.columnaProducto.HeaderText = "PRODUCTO";
             this.columnaProducto.Name = "columnaProducto";
             this.columnaProducto.ReadOnly = true;
-            this.columnaProducto.Width = 280;
+            this.columnaProducto.Width = 300;
             // 
             // columnaContenido
             // 

@@ -62,11 +62,12 @@ namespace TALLER.CapaVista
             tabla.Columns.Add("VENDEDOR");//1
             tabla.Columns.Add("CLIENTE");//2
             tabla.Columns.Add("FECHA");//3
-            tabla.Columns.Add("COSTO T");//4
-            tabla.Columns.Add("PAGO");//5
-            tabla.Columns.Add("EFECTIVO");//6
-            tabla.Columns.Add("CAMBIO");//7
-            tabla.Columns.Add("ESTADO");//8
+            tabla.Columns.Add("TARJETAS");//4
+            tabla.Columns.Add("TOTAL");//5
+            tabla.Columns.Add("PAGO");//6
+            tabla.Columns.Add("EFECTIVO");//7
+            tabla.Columns.Add("CAMBIO");//8
+            tabla.Columns.Add("ESTADO");//9
         }
 
         private void cargarDatos()
@@ -78,7 +79,7 @@ namespace TALLER.CapaVista
                 listaVentas = bd.listarDeudasCliente(cliente);
 
             foreach (ListaVenta v in listaVentas)
-                tabla.Rows.Add(new Object[] { v.IDVENTA, v.NOMBREUSUARIO, v.NOMBRECLIENTE, v.FECHA, v.COSTOTOTAL, v.PAGO, v.EFECTIVO, v.CAMBIO, v.ESTADO });
+                tabla.Rows.Add(new Object[] { v.IDVENTA, v.NOMBREUSUARIO, v.NOMBRECLIENTE, v.FECHA, v.COSTOTARJETA,v.COSTOTOTAL, v.PAGO, v.EFECTIVO, v.CAMBIO, v.ESTADO });
 
             this.dgvIngresos.DataSource = tabla;
         }
@@ -96,7 +97,7 @@ namespace TALLER.CapaVista
                 ListaVenta lv = listaVentas[i];
                 if (lv.IDVENTA == idVenta)
                 {
-                    FormLoteVenta frm = new FormLoteVenta(lv);
+                    FormLoteVenta frm = new FormLoteVenta(lv,usuario);
                     string respuesta = frm.ShowDialog().ToString();
                     if (respuesta == "OK")
                     {

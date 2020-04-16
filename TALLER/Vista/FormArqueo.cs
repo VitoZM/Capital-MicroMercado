@@ -28,6 +28,9 @@ namespace TALLER.Vista
         private decimal compras;
         private decimal egresos;
         private decimal totalEfectivo;
+        private decimal tarjetas;
+        private decimal tarjetasEfectivo;
+        private decimal totalTarjetas;
         public FormArqueo(Usuario u)
         {
             InitializeComponent();
@@ -43,8 +46,23 @@ namespace TALLER.Vista
             cargarCambios();
             cargarCompras();
             cargarEgresos();
+            cargarTarjetas();
             calcularTotales();
 
+        }
+
+        private void cargarTarjetas()
+        {
+            tarjetas = bd.obtenerTarjetasHoy(usuario.IDUSUARIO);
+            this.txtBoxTarjetaDebito.Text = tarjetas.ToString();
+            tarjetasEfectivo = bd.obtenerTarjetasEfectivoHoy(usuario.IDUSUARIO);
+            this.txtBoxTarjetas.Text = tarjetasEfectivo.ToString();
+            this.txtBoxDescontar.Text = (tarjetasEfectivo + tarjetas).ToString();
+            totalTarjetas = bd.obtenerEfectivoCajaTarjeta();
+            this.txtBoxTotalTarjetas.Text = totalTarjetas.ToString();
+            this.txtBoxEfectivo.Text = (ventasEfectivo - tarjetasEfectivo).ToString();
+            cambios -= tarjetas;
+            this.txtBoxCambios.Text = cambios.ToString();
         }
 
         private void calcularTotales()
@@ -52,7 +70,7 @@ namespace TALLER.Vista
             decimal totalIngresos = ventasEfectivo + ventasCredito + ventasTarjeta + inversiones + cambios;
             decimal totalEgresos = compras + egresos;
             decimal montoTotal = totalIngresos - totalEgresos;
-            totalEfectivo = ventasEfectivo + inversiones + cambios - totalEgresos;
+            totalEfectivo = ventasEfectivo + inversiones + cambios - totalEgresos - tarjetasEfectivo;
 
             this.txtBoxIngresos.Text = totalIngresos.ToString();
             this.txtBoxEgresos.Text = totalEgresos.ToString();
@@ -127,6 +145,16 @@ namespace TALLER.Vista
                 frm.Show();
                 Application.Exit();
             }
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

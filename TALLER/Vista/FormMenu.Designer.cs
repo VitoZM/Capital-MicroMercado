@@ -50,6 +50,7 @@
             this.btnEgresos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.btnTarjetas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlEgresos = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -87,7 +88,6 @@
             this.lblCambios = new System.Windows.Forms.Label();
             this.lblCi = new System.Windows.Forms.Label();
             this.lblusuario = new System.Windows.Forms.Label();
-            this.btnTarjetas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconmaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMinimizar)).BeginInit();
@@ -462,6 +462,28 @@
             this.MenuVertical.Size = new System.Drawing.Size(250, 778);
             this.MenuVertical.TabIndex = 3;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
+            // 
+            // btnTarjetas
+            // 
+            this.btnTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTarjetas.FlatAppearance.BorderSize = 0;
+            this.btnTarjetas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnTarjetas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.btnTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarjetas.ForeColor = System.Drawing.Color.White;
+            this.btnTarjetas.Image = ((System.Drawing.Image)(resources.GetObject("btnTarjetas.Image")));
+            this.btnTarjetas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTarjetas.Location = new System.Drawing.Point(0, 434);
+            this.btnTarjetas.Name = "btnTarjetas";
+            this.btnTarjetas.Size = new System.Drawing.Size(253, 58);
+            this.btnTarjetas.TabIndex = 73;
+            this.btnTarjetas.Text = "  TARJETAS";
+            this.btnTarjetas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTarjetas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTarjetas.UseVisualStyleBackColor = false;
+            this.btnTarjetas.Click += new System.EventHandler(this.btnTarjetas_Click);
             // 
             // button1
             // 
@@ -1005,28 +1027,6 @@
             this.lblusuario.Size = new System.Drawing.Size(56, 19);
             this.lblusuario.TabIndex = 24;
             this.lblusuario.Text = "U-00N";
-            // 
-            // btnTarjetas
-            // 
-            this.btnTarjetas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnTarjetas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTarjetas.FlatAppearance.BorderSize = 0;
-            this.btnTarjetas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnTarjetas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.btnTarjetas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTarjetas.ForeColor = System.Drawing.Color.White;
-            this.btnTarjetas.Image = ((System.Drawing.Image)(resources.GetObject("btnTarjetas.Image")));
-            this.btnTarjetas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTarjetas.Location = new System.Drawing.Point(-3, 669);
-            this.btnTarjetas.Name = "btnTarjetas";
-            this.btnTarjetas.Size = new System.Drawing.Size(253, 37);
-            this.btnTarjetas.TabIndex = 73;
-            this.btnTarjetas.Text = "  TARJETAS";
-            this.btnTarjetas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTarjetas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTarjetas.UseVisualStyleBackColor = false;
-            this.btnTarjetas.Visible = false;
             // 
             // FormMenu
             // 

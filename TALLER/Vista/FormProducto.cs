@@ -61,6 +61,8 @@ namespace TALLER.Vista
             this.txtBoxId.Text = producto.IDPRODUCTO.ToString();
             this.txtBoxCodigo.Text = producto.CODIGO;
             this.txtBoxNombre.Text = producto.NOMBRE;
+            if (producto.NOMBRE == "TARJETA")
+                txtBoxNombre.ReadOnly = true;
             string[] marca = producto.MARCA.Split(' ');
             this.txtBoxMarca.Text = marca[0];
             for (int i = 1; i < marca.Count(); i++)

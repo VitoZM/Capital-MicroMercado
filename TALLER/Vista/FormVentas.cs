@@ -72,11 +72,18 @@ namespace TALLER.CapaVista
 
         private bool ventaValida()
         {
+            string pago = this.txtBoxPago.Text;
+            string ci = this.txtBoxCi.Text;
             decimal costoTotal = bd.convertirDecimal(this.txtBoxCosto.Text);
             decimal efectivo = bd.convertirDecimal(this.txtBoxCosto.Text);
             decimal cambio = bd.convertirDecimal(this.txtBoxCambio.Text);
+
             if (costoTotal <= 0 || cambio < 0 || efectivo <= 0)
                 return false;
+
+            if (pago == "CREDITO" && ci.Length < 4)
+                return false;
+
             return true;
         }
 
@@ -278,8 +285,8 @@ namespace TALLER.CapaVista
             {
                 cambiarModoBotones(banVenta);
                 instanciarCliente();
-                instanciarVenta();
                 instanciarLoteVenta();
+                instanciarVenta();
                 bd.insertarVenta(venta, cliente, listaLoteVenta);
                 limpiar();
                 MessageBox.Show("¡VENTA REGISTRADA EXITOSAMENTE!");
@@ -297,7 +304,10 @@ namespace TALLER.CapaVista
                     decimal precio = bd.convertirDecimal(row.Cells[3].Value.ToString());
                     int cantidad = bd.convertirEntero(row.Cells[4].Value.ToString());
                     int id = bd.convertirEntero(row.Cells[6].Value.ToString());
-                    lote = new LoteVenta(-1, id, cantidad, precio, "", costo);
+                    string estado = "1";
+                    if (row.Cells[1].Value.ToString().Split(' ')[0] == "TARJETA")
+                        estado = "0";
+                    lote = new LoteVenta(-1, id, cantidad, precio, estado, costo);
 
                     this.listaLoteVenta.Add(lote);
                 }
@@ -311,8 +321,13 @@ namespace TALLER.CapaVista
             decimal efectivo = bd.convertirDecimal(this.txtBoxEfectivo.Text);
             decimal cambio = bd.convertirDecimal(this.txtBoxCambio.Text);
             string pago = this.txtBoxPago.Text;
+            decimal costoTarjeta = 0;
 
-            venta = new Venta(-1, idUsuario, -1, "", costoTotal, efectivo, cambio, "1", pago);
+            foreach (LoteVenta l in listaLoteVenta)
+                if (l.ESTADO == "CANCELADO")
+                    costoTarjeta += l.COSTO;
+
+            venta = new Venta(-1, idUsuario, -1, "", costoTotal, efectivo, cambio, "1", pago, costoTarjeta);
         }
 
         private void instanciarCliente()

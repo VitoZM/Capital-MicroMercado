@@ -40,13 +40,14 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label14;
             System.Windows.Forms.Label label1;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label15;
+            System.Windows.Forms.Label label16;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label label15;
+            System.Windows.Forms.Label label18;
+            System.Windows.Forms.Label label19;
+            System.Windows.Forms.Label label21;
             this.label4 = new System.Windows.Forms.Label();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
             this.txtBoxIngresos = new System.Windows.Forms.TextBox();
@@ -60,15 +61,19 @@
             this.txtBoxEgresos = new System.Windows.Forms.TextBox();
             this.txtBoxMontoTotal = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtBoxTotalTarjetas = new System.Windows.Forms.TextBox();
             this.btnCerrarCaja = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtBoxTarjetas = new System.Windows.Forms.TextBox();
             this.txtBoxEfectivoTotal = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
-            this.dgvTarjetas = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtBoxTarjetaDebito = new System.Windows.Forms.TextBox();
+            this.txtBoxDescontar = new System.Windows.Forms.TextBox();
             label20 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -82,12 +87,16 @@
             label14 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label15 = new System.Windows.Forms.Label();
+            label16 = new System.Windows.Forms.Label();
+            label18 = new System.Windows.Forms.Label();
+            label19 = new System.Windows.Forms.Label();
+            label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label20
@@ -156,7 +165,7 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(44, 63);
+            label3.Location = new System.Drawing.Point(47, 63);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(74, 16);
             label3.TabIndex = 69;
@@ -180,7 +189,7 @@
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(44, 37);
+            label7.Location = new System.Drawing.Point(47, 37);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(86, 16);
             label7.TabIndex = 69;
@@ -228,11 +237,35 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(18, 179);
+            label1.Location = new System.Drawing.Point(18, 162);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(192, 24);
             label1.TabIndex = 71;
             label1.Text = "TOTAL EFECTIVO:";
+            // 
+            // label15
+            // 
+            label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label15.AutoSize = true;
+            label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label15.ForeColor = System.Drawing.SystemColors.Control;
+            label15.Location = new System.Drawing.Point(11, 34);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(86, 16);
+            label15.TabIndex = 71;
+            label15.Text = "EFECTIVO:";
+            // 
+            // label16
+            // 
+            label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label16.AutoSize = true;
+            label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label16.ForeColor = System.Drawing.SystemColors.Control;
+            label16.Location = new System.Drawing.Point(10, 120);
+            label16.Name = "label16";
+            label16.Size = new System.Drawing.Size(194, 24);
+            label16.TabIndex = 73;
+            label16.Text = "TOTAL TARJETAS:";
             // 
             // label4
             // 
@@ -256,40 +289,39 @@
             this.dgvVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.dgvVentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVentas.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvVentas.Location = new System.Drawing.Point(7, 567);
+            this.dgvVentas.Location = new System.Drawing.Point(3, 26);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVentas.Size = new System.Drawing.Size(847, 39);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvVentas.Size = new System.Drawing.Size(847, 203);
             this.dgvVentas.TabIndex = 9;
-            this.dgvVentas.Visible = false;
             // 
             // txtBoxIngresos
             // 
@@ -361,7 +393,7 @@
             // 
             this.txtBoxGastos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxGastos.Location = new System.Drawing.Point(205, 62);
+            this.txtBoxGastos.Location = new System.Drawing.Point(208, 62);
             this.txtBoxGastos.Name = "txtBoxGastos";
             this.txtBoxGastos.ReadOnly = true;
             this.txtBoxGastos.Size = new System.Drawing.Size(166, 22);
@@ -372,7 +404,7 @@
             // 
             this.txtBoxCompras.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCompras.Location = new System.Drawing.Point(205, 36);
+            this.txtBoxCompras.Location = new System.Drawing.Point(208, 36);
             this.txtBoxCompras.Name = "txtBoxCompras";
             this.txtBoxCompras.ReadOnly = true;
             this.txtBoxCompras.Size = new System.Drawing.Size(166, 22);
@@ -404,7 +436,8 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.dgvTarjetas);
+            this.panel3.Controls.Add(label21);
+            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.dgvVentas);
             this.panel3.Controls.Add(this.btnCerrarCaja);
             this.panel3.Controls.Add(this.panel5);
@@ -415,6 +448,18 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(859, 705);
             this.panel3.TabIndex = 66;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // txtBoxTotalTarjetas
+            // 
+            this.txtBoxTotalTarjetas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxTotalTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTotalTarjetas.Location = new System.Drawing.Point(213, 117);
+            this.txtBoxTotalTarjetas.Name = "txtBoxTotalTarjetas";
+            this.txtBoxTotalTarjetas.ReadOnly = true;
+            this.txtBoxTotalTarjetas.Size = new System.Drawing.Size(147, 29);
+            this.txtBoxTotalTarjetas.TabIndex = 74;
+            this.txtBoxTotalTarjetas.Text = "0";
             // 
             // btnCerrarCaja
             // 
@@ -428,7 +473,7 @@
             this.btnCerrarCaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarCaja.ForeColor = System.Drawing.Color.Silver;
             this.btnCerrarCaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarCaja.Location = new System.Drawing.Point(570, 632);
+            this.btnCerrarCaja.Location = new System.Drawing.Point(570, 594);
             this.btnCerrarCaja.Name = "btnCerrarCaja";
             this.btnCerrarCaja.Size = new System.Drawing.Size(284, 61);
             this.btnCerrarCaja.TabIndex = 76;
@@ -443,24 +488,33 @@
             this.panel5.Controls.Add(label14);
             this.panel5.Controls.Add(label20);
             this.panel5.Controls.Add(this.txtBoxIngresos);
-            this.panel5.Controls.Add(this.textBox1);
             this.panel5.Controls.Add(this.txtBoxEfectivoTotal);
             this.panel5.Controls.Add(this.txtBoxMontoTotal);
-            this.panel5.Controls.Add(label15);
             this.panel5.Controls.Add(label1);
             this.panel5.Controls.Add(label5);
             this.panel5.Controls.Add(label8);
             this.panel5.Controls.Add(this.txtBoxEgresos);
             this.panel5.Location = new System.Drawing.Point(442, 235);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(412, 220);
+            this.panel5.Size = new System.Drawing.Size(412, 208);
             this.panel5.TabIndex = 75;
+            // 
+            // txtBoxTarjetas
+            // 
+            this.txtBoxTarjetas.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxTarjetas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTarjetas.Location = new System.Drawing.Point(194, 31);
+            this.txtBoxTarjetas.Name = "txtBoxTarjetas";
+            this.txtBoxTarjetas.ReadOnly = true;
+            this.txtBoxTarjetas.Size = new System.Drawing.Size(166, 22);
+            this.txtBoxTarjetas.TabIndex = 72;
+            this.txtBoxTarjetas.Text = "0";
             // 
             // txtBoxEfectivoTotal
             // 
             this.txtBoxEfectivoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxEfectivoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEfectivoTotal.Location = new System.Drawing.Point(245, 176);
+            this.txtBoxEfectivoTotal.Location = new System.Drawing.Point(245, 159);
             this.txtBoxEfectivoTotal.Name = "txtBoxEfectivoTotal";
             this.txtBoxEfectivoTotal.ReadOnly = true;
             this.txtBoxEfectivoTotal.Size = new System.Drawing.Size(147, 29);
@@ -475,9 +529,9 @@
             this.panel4.Controls.Add(label3);
             this.panel4.Controls.Add(this.txtBoxGastos);
             this.panel4.Controls.Add(this.txtBoxCompras);
-            this.panel4.Location = new System.Drawing.Point(7, 461);
+            this.panel4.Location = new System.Drawing.Point(442, 449);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(406, 100);
+            this.panel4.Size = new System.Drawing.Size(412, 100);
             this.panel4.TabIndex = 74;
             // 
             // label13
@@ -486,7 +540,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(15, 9);
+            this.label13.Location = new System.Drawing.Point(18, 9);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(109, 24);
             this.label13.TabIndex = 74;
@@ -508,7 +562,7 @@
             this.panel2.Controls.Add(this.txtBoxInversiones);
             this.panel2.Location = new System.Drawing.Point(7, 235);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(406, 220);
+            this.panel2.Size = new System.Drawing.Size(406, 208);
             this.panel2.TabIndex = 73;
             // 
             // label12
@@ -523,73 +577,96 @@
             this.label12.TabIndex = 74;
             this.label12.Text = "INGRESOS";
             // 
-            // dgvTarjetas
+            // panel1
             // 
-            this.dgvTarjetas.AllowUserToAddRows = false;
-            this.dgvTarjetas.AllowUserToDeleteRows = false;
-            this.dgvTarjetas.AllowUserToOrderColumns = true;
-            this.dgvTarjetas.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dgvTarjetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvTarjetas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            this.dgvTarjetas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvTarjetas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTarjetas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvTarjetas.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTarjetas.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvTarjetas.EnableHeadersVisualStyles = false;
-            this.dgvTarjetas.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvTarjetas.Location = new System.Drawing.Point(7, 26);
-            this.dgvTarjetas.Name = "dgvTarjetas";
-            this.dgvTarjetas.ReadOnly = true;
-            this.dgvTarjetas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTarjetas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvTarjetas.Size = new System.Drawing.Size(847, 203);
-            this.dgvTarjetas.TabIndex = 77;
-            this.dgvTarjetas.Visible = false;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.txtBoxTotalTarjetas);
+            this.panel1.Controls.Add(label19);
+            this.panel1.Controls.Add(this.txtBoxDescontar);
+            this.panel1.Controls.Add(label18);
+            this.panel1.Controls.Add(this.txtBoxTarjetaDebito);
+            this.panel1.Controls.Add(label15);
+            this.panel1.Controls.Add(label16);
+            this.panel1.Controls.Add(this.txtBoxTarjetas);
+            this.panel1.Location = new System.Drawing.Point(7, 449);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(406, 158);
+            this.panel1.TabIndex = 75;
             // 
-            // label15
+            // label17
             // 
-            label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            label15.AutoSize = true;
-            label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label15.ForeColor = System.Drawing.SystemColors.Control;
-            label15.Location = new System.Drawing.Point(18, 144);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(192, 24);
-            label15.TabIndex = 71;
-            label15.Text = "TOTAL EFECTIVO:";
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.Control;
+            this.label17.Location = new System.Drawing.Point(15, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(115, 24);
+            this.label17.TabIndex = 74;
+            this.label17.Text = "TARJETAS";
             // 
-            // textBox1
+            // txtBoxTarjetaDebito
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(245, 141);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(147, 29);
-            this.textBox1.TabIndex = 72;
-            this.textBox1.Text = "0";
+            this.txtBoxTarjetaDebito.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxTarjetaDebito.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxTarjetaDebito.Location = new System.Drawing.Point(194, 56);
+            this.txtBoxTarjetaDebito.Name = "txtBoxTarjetaDebito";
+            this.txtBoxTarjetaDebito.ReadOnly = true;
+            this.txtBoxTarjetaDebito.Size = new System.Drawing.Size(166, 22);
+            this.txtBoxTarjetaDebito.TabIndex = 72;
+            this.txtBoxTarjetaDebito.Text = "0";
+            // 
+            // label18
+            // 
+            label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label18.AutoSize = true;
+            label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label18.ForeColor = System.Drawing.SystemColors.Control;
+            label18.Location = new System.Drawing.Point(11, 59);
+            label18.Name = "label18";
+            label18.Size = new System.Drawing.Size(141, 16);
+            label18.TabIndex = 71;
+            label18.Text = "TARJETA DEBITO:";
+            label18.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // txtBoxDescontar
+            // 
+            this.txtBoxDescontar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxDescontar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxDescontar.Location = new System.Drawing.Point(194, 84);
+            this.txtBoxDescontar.Name = "txtBoxDescontar";
+            this.txtBoxDescontar.ReadOnly = true;
+            this.txtBoxDescontar.Size = new System.Drawing.Size(166, 22);
+            this.txtBoxDescontar.TabIndex = 72;
+            this.txtBoxDescontar.Text = "0";
+            // 
+            // label19
+            // 
+            label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label19.AutoSize = true;
+            label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label19.ForeColor = System.Drawing.SystemColors.Control;
+            label19.Location = new System.Drawing.Point(11, 87);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(148, 16);
+            label19.TabIndex = 71;
+            label19.Text = "DESCONTAR CAJA:";
+            label19.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // label21
+            // 
+            label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label21.AutoSize = true;
+            label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label21.ForeColor = System.Drawing.SystemColors.Control;
+            label21.Location = new System.Drawing.Point(19, 617);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(398, 80);
+            label21.TabIndex = 75;
+            label21.Text = "NOTA: EN SECCION TARJETAS.-\r\nEFECTIVO: ES LO VENDIDO EN EFECTIVO HOY\r\nTARJETA DEB" +
+    "ITO: ES LO VENDIDO CON TARJETA\r\nDESCONTAR CAJA: ES EL EXCEDENTE QUE SE TIENE\r\nEN" +
+    " EFECTIVO EN LA CAJA";
             // 
             // FormArqueo
             // 
@@ -610,7 +687,8 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTarjetas)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -637,7 +715,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBoxEfectivoTotal;
         private System.Windows.Forms.Button btnCerrarCaja;
-        private System.Windows.Forms.DataGridView dgvTarjetas;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBoxTarjetas;
+        private System.Windows.Forms.TextBox txtBoxTotalTarjetas;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtBoxTarjetaDebito;
+        private System.Windows.Forms.TextBox txtBoxDescontar;
     }
 }

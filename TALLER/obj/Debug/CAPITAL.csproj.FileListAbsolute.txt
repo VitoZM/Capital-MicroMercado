@@ -124,3 +124,4 @@ E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\RdlCompile.compiled
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\CAPITAL.csprojAssemblyReference.cache
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\bin\Debug\Informes\Factura.rdlc
 E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.Vista.FormFactura.resources
+E:\TRABAJOS\TRABAJOS\CAPITAL\TALLER\obj\Debug\TALLER.Vista.FormTarjetas.resources

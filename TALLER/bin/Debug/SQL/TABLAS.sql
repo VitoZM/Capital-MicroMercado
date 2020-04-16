@@ -105,6 +105,7 @@ Estado char(1),
 Ultimo char(1),
 Pago varchar(10),
 Descripcion varchar(120),
+CostoTarjeta float,
 FOREIGN KEY(IdUsuario)REFERENCES USUARIO(IdUsuario),
 FOREIGN KEY(IdCliente)REFERENCES CLIENTE(IdCliente)
 )

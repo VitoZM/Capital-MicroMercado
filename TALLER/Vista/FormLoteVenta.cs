@@ -19,11 +19,12 @@ namespace TALLER.Vista
         private BaseDatos bd = new BaseDatos();
         private ListaVenta listaVenta;
         private List<ListaLoteVenta> listaLoteVenta;
-        public FormLoteVenta(ListaVenta v)
+        private Usuario usuario;
+        public FormLoteVenta(ListaVenta v,Usuario u)
         {
             InitializeComponent();
             listaVenta = v;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            usuario = u;
         }
 
         private void FormLoteVenta_Load(object sender, EventArgs e)
@@ -82,6 +83,7 @@ namespace TALLER.Vista
             this.txtBoxPago.Text = this.listaVenta.PAGO.ToString();
             this.txtBoxCosto.Text = this.listaVenta.COSTOTOTAL.ToString();
             this.txtBoxDescripcion.Text = this.listaVenta.DESCRIPCION;
+            this.txtBoxTarjeta.Text = this.listaVenta.COSTOTARJETA.ToString();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace TALLER.Vista
             DialogResult result = MessageBox.Show("¿SEGURO QUE DESEA PAGAR LA VENTA?", "PAGAR VENTA", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                bd.pagarCredito(listaVenta.IDVENTA);
+                bd.pagarCredito(listaVenta.IDVENTA,usuario.IDUSUARIO);
                 MessageBox.Show("¡VENTA PAGADA EXITOSAMENTE!");
                 DialogResult = System.Windows.Forms.DialogResult.OK;
             }
