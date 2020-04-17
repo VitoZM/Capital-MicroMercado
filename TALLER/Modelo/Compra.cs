@@ -14,6 +14,8 @@ namespace TALLER.Modelo
         private string descripcion;
         private int idDistribuidora;
         private int idUsuario;
+        private decimal descuento;
+        private decimal costoFinal;
 
         public int IDCOMPRA
         {
@@ -54,7 +56,19 @@ namespace TALLER.Modelo
             set { idUsuario = value; }
         }
 
-        public Compra(int idCompra, string fecha, decimal costototal, string descripcion, int idDistribuidora, int idUsuario)
+        public decimal COSTOFINAL
+        {
+            get { return costoFinal; }
+            set { costoFinal = value; }
+        }
+
+        public decimal DESCUENTO
+        {
+            get { return descuento; }
+            set { descuento = value; }
+        }
+
+        public Compra(int idCompra, string fecha, decimal costototal, string descripcion, int idDistribuidora, int idUsuario, decimal descuento, decimal costoFinal)
         {
             this.IDCOMPRA = idCompra;
             this.FECHA = fecha;
@@ -62,6 +76,8 @@ namespace TALLER.Modelo
             this.DESCRIPCION = descripcion;
             this.IDDISTRIBUIDORA = idDistribuidora;
             this.IDUSUARIO = idUsuario;
+            this.DESCUENTO = descuento;
+            this.COSTOFINAL = costoFinal;
         }
     }
 }

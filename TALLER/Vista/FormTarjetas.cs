@@ -36,10 +36,20 @@ namespace TALLER.Vista
 
         private void cargarMontos()
         {
-            this.txtBoxMontoTotal.Text = bd.obtenerMontoTotalTarjetas().ToString();
-            this.txtBoxMontoDeuda.Text = bd.obtenerMontoDeudaTarjetas().ToString();
-            this.txtBoxMontoPrestado.Text = bd.obtenerMontoPrestadoTarjetas().ToString();
-            this.txtBoxMontoEfectivo.Text = bd.obtenerMontoEfectivoTarjetas().ToString();
+            decimal deuda = bd.obtenerMontoDeudaTarjetas();
+            decimal prestado = bd.obtenerMontoPrestadoTarjetas();
+            decimal efectivo = bd.obtenerMontoEfectivoTarjetas();
+            decimal capital = bd.obtenerCapitalTarjetas();
+            decimal montoTotal = prestado + efectivo + capital - deuda;
+
+            this.txtBoxMontoDeuda.Text = deuda.ToString();
+            this.txtBoxMontoPrestado.Text = prestado.ToString();
+            this.txtBoxMontoEfectivo.Text = efectivo.ToString();
+            this.txtBoxCapital.Text = capital.ToString();
+            this.txtBoxMontoTotal.Text = montoTotal.ToString();
+
+            if (montoTotal < 0)
+                this.txtBoxMontoTotal.ForeColor = Color.Red;
         }
 
         private void armarTabla()
@@ -156,7 +166,7 @@ namespace TALLER.Vista
             string descripcion = "COMPRA DE TARJETAS";
             decimal costoTotal = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
 
-            compra = new Compra(-1, "", costoTotal, descripcion, -1, 1);
+            compra = new Compra(-1, "", costoTotal, descripcion, -1, 1, 0, costoTotal);
         }
 
         private void instanciarDistribuidora()
@@ -233,6 +243,28 @@ namespace TALLER.Vista
             {
                 MessageBox.Show("¡PRODUCTO EDITADO EXITOSAMENTE!");
                 cargarDatos();
+            }
+        }
+
+        private void dgvTarjetas_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void dgvVenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                e.SuppressKeyPress = true;
+                try
+                {
+                    int fila = dgvVenta.CurrentRow.Index;
+                    dgvVenta.Rows.RemoveAt(dgvVenta.CurrentRow.Index);
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
     }

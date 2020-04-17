@@ -25,7 +25,7 @@ namespace TALLER.ClasesVista
             set { nombreDistribuidora = value; }
         }
 
-        public ListaCompra(int idCompra, string fecha, decimal costototal, string descripcion, int idDistribuidora, int idUsuario, string nombreUsuario, string nombreDistribuidora) :base(idCompra,fecha,costototal,descripcion,idDistribuidora,idUsuario)
+        public ListaCompra(int idCompra, string fecha, decimal costototal, string descripcion, int idDistribuidora, int idUsuario, decimal descuento, decimal costoFinal, string nombreUsuario, string nombreDistribuidora) : base(idCompra, fecha, costototal, descripcion, idDistribuidora, idUsuario, descuento, costoFinal)
         {
             this.NOMBREUSUARIO = nombreUsuario;
             this.NOMBREDISTRIBUIDORA = nombreDistribuidora;

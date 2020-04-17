@@ -157,6 +157,7 @@ namespace TALLER.CapaVista
             this.txtBoxCodigo.Text = "";
             this.txtBoxNombre.Text = "";
             this.txtBoxMarca.Text = "";
+            this.txtBoxPresentacion.Text = "";
             this.txtBoxContenido.Text = "";
             this.txtBoxPrecioVenta.Text = "";
             this.txtBoxDescripcion.Text = "";
@@ -243,13 +244,15 @@ namespace TALLER.CapaVista
         private void calcularCostoTotal()
         {
             decimal costoTotal = 0;
+            decimal descuento = bd.convertirDecimal(this.txtBoxDescuento.Text);
             for (int i = 0; i < this.dgvVenta.RowCount; i++)
             {
                 DataGridViewRow row = dgvVenta.Rows[i];
                 decimal costo = bd.convertirDecimal(row.Cells[7].Value.ToString());
                 costoTotal += costo;
             }
-            this.txtBoxCostoTotal.Text = costoTotal.ToString();
+            decimal costoFinal = costoTotal - descuento;
+            this.txtBoxCostoTotal.Text = costoFinal.ToString();
         }
 
         private void dgvVenta_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -328,9 +331,15 @@ namespace TALLER.CapaVista
         private void instanciarCompra()
         {
             string descripcion = this.txtBoxDescripcion2.Text;
-            decimal costoTotal = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
+            decimal costoFinal = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
+            decimal descuento = bd.convertirDecimal(this.txtBoxDescuento.Text);
+            decimal costoTotal = costoFinal + descuento;
+            int idUsuario = 1;
 
-            compra = new Compra(-1, "", costoTotal, descripcion, -1, usuario.IDUSUARIO);
+            if (this.chkBox.Checked)
+                idUsuario = usuario.IDUSUARIO;
+
+            compra = new Compra(-1, "", costoTotal, descripcion, -1, idUsuario, descuento, costoFinal);
         }
 
         private void instanciarDistribuidora()
@@ -361,6 +370,8 @@ namespace TALLER.CapaVista
             this.txtBoxCostoTotal.Text= "0";
             this.txtBoxDescripcion2.Text = "";
             this.txtBoxCantidad.Text = string.Empty;
+            this.txtBoxDescuento.Text = "";
+            this.chkBox.Checked = false;
             this.txtBoxBuscarCodigo.Focus();
         }
 
@@ -502,6 +513,11 @@ namespace TALLER.CapaVista
         {
             FormMisCompras frm = new FormMisCompras(usuario);
             frm.ShowDialog();
+        }
+
+        private void txtBoxDescuento_TextChanged(object sender, EventArgs e)
+        {
+            calcularCostoTotal();
         }
     }
 }

@@ -49,7 +49,9 @@ namespace TALLER.Vista
             tabla.Columns.Add("DISTRIBUIDORA");//2
             tabla.Columns.Add("FECHA");//3
             tabla.Columns.Add("COSTO T");//4
-            //tabla.Columns.Add("DESCRIPCION");//5
+            tabla.Columns.Add("DESCUENTO");//5
+            tabla.Columns.Add("COSTO F");//6
+            //tabla.Columns.Add("DESCRIPCION");//7
         }
 
 
@@ -58,7 +60,7 @@ namespace TALLER.Vista
             listaCompras = bd.listarCompras(usuario);
 
             foreach (ListaCompra c in listaCompras)
-                tabla.Rows.Add(new Object[] { c.IDCOMPRA, c.NOMBREUSUARIO, c.NOMBREDISTRIBUIDORA, c.FECHA, c.COSTOTOTAL/*, c.DESCRIPCION*/ });
+                tabla.Rows.Add(new Object[] { c.IDCOMPRA, c.NOMBREUSUARIO, c.NOMBREDISTRIBUIDORA, c.FECHA, c.COSTOTOTAL, c.DESCUENTO, c.COSTOFINAL/*, c.DESCRIPCION*/ });
 
             this.dgvCompras.Rows.Clear();
             this.dgvCompras.DataSource = tabla;

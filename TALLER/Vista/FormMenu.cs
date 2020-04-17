@@ -226,6 +226,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y + yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
             }
             else
             {
@@ -235,6 +236,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, -yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y - yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, -yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
             }
         }
 
@@ -296,6 +298,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y + yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
             }
             else
             {
@@ -304,6 +307,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, -yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y - yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, -yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
             }
         }
 
@@ -336,6 +340,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y + yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
             }
             else
             {
@@ -346,6 +351,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, -yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y - yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, -yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
             }
         }
 
@@ -366,6 +372,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y + yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
             }
             else
             {
@@ -373,6 +380,7 @@ namespace TALLER.CapaVista
                 desplazarControles(btnRecursos, pnlRecursos, -yDesplazamiento);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y - yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, -yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
             }
         }
 
@@ -385,12 +393,14 @@ namespace TALLER.CapaVista
                 cambiarControl(pnlRecursos, ref banRecursos);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y + yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
             }
             else
             {
                 cambiarControl(pnlRecursos, ref banRecursos);
                 btnArqueos.Location = new Point(btnArqueos.Location.X, btnArqueos.Location.Y - yDesplazamiento);
                 desplazarControles(btnConsultas, pnlConsultas, -yDesplazamiento);
+                btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
             }
         }
 

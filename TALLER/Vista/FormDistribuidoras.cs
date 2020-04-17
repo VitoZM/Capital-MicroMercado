@@ -133,5 +133,15 @@ namespace TALLER.Vista
                 }
             }
         }
+
+        private void txtBoxBuscarNombre_TextChanged(object sender, EventArgs e)
+        {
+            string caja = this.txtBoxBuscarNombre.Text.ToUpper();
+
+            if (caja.Length > 0)
+                tabla.DefaultView.RowFilter = $"NOMBRE LIKE'%{caja}%'";
+            else
+                tabla.DefaultView.RowFilter = $"NOMBRE LIKE '%'";
+        }
     }
 }

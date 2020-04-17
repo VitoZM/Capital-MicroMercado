@@ -35,7 +35,7 @@ namespace TALLER.Controlador
             this.conn.Close();
         }
 
-        internal object obtenerMontoPrestadoTarjetas()
+        public decimal obtenerMontoPrestadoTarjetas()
         {
             try
             {
@@ -56,7 +56,28 @@ namespace TALLER.Controlador
             return 0;
         }
 
-        internal object obtenerMontoEfectivoTarjetas()
+        public decimal obtenerCapitalTarjetas()
+        {
+            try
+            {
+                string comando = "EXEC OBTENERCAPITALTARJETAS";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                decimal total = convertirDecimal(cmd.ExecuteScalar().ToString());
+                this.conn.Close();
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return 0;
+        }
+
+        public decimal obtenerMontoEfectivoTarjetas()
         {
             try
             {
@@ -77,7 +98,7 @@ namespace TALLER.Controlador
             return 0;
         }
 
-        internal object obtenerMontoDeudaTarjetas()
+        public decimal obtenerMontoDeudaTarjetas()
         {
             try
             {
@@ -711,8 +732,10 @@ namespace TALLER.Controlador
                     string fecha = myReader["fecha"].ToString();
                     decimal costoTotal = convertirDecimal(myReader["costototal"].ToString());
                     string descripcion = myReader["DESCRIPCION"].ToString();
+                    decimal descuento = convertirDecimal(myReader["DESCUENTO"].ToString());
+                    decimal costoFinal = convertirDecimal(myReader["CostoFinal"].ToString());
 
-                    ListaCompra lc = new ListaCompra(id, fecha, costoTotal, descripcion, 0, 0, nombreUsuario, nombreDistribuidora);
+                    ListaCompra lc = new ListaCompra(id, fecha, costoTotal, descripcion, 0, 0, descuento, costoFinal, nombreUsuario, nombreDistribuidora);
                     lis.Add(lc);
                 }
                 this.conn.Close();
@@ -1097,7 +1120,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "EXEC INSERTARCOMPRA " + sinComas(compra.COSTOTOTAL) + ",'" + compra.DESCRIPCION + "','" + distribuidora.NOMBRE + "','" + distribuidora.DIRECCION + "','" + distribuidora.TELEFONO + "','" + distribuidora.CATEGORIA + "',1";
+                string comando = "EXEC INSERTARCOMPRA " + sinComas(compra.COSTOTOTAL) + ",'" + compra.DESCRIPCION + "','" + distribuidora.NOMBRE + "','" + distribuidora.DIRECCION + "','" + distribuidora.TELEFONO + "','" + distribuidora.CATEGORIA + "'," + compra.IDUSUARIO + "," + sinComas(compra.DESCUENTO) + "," + sinComas(compra.COSTOFINAL);
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;

@@ -31,6 +31,8 @@ Ultimo char(1),
 Descripcion varchar(100),
 IdDistribuidora int,
 IdUsuario int,
+Descuento float,
+CostoFinal float,
 foreign key(IdUsuario)references usuario(IdUsuario),
 foreign key(IdDistribuidora)references distribuidora(IdDistribuidora)
 )
@@ -169,5 +171,11 @@ Ultimo char(1),
 Primero char(1),
 FOREIGN KEY(IdUsuario)REFERENCES USUARIO(IdUsuario)
 )
-
+CREATE TABLE CAJATARJETA(
+IdCaja int identity primary key,
+MontoTotal float,
+MontoPrestado float,
+MontoEfectivo float,
+MontoDeuda float
+)
 ---FALTA CAJA,REGISTRO VENTAS A CREDITO, REGISTRO DE DESCUENTO DE PRODUCTOS

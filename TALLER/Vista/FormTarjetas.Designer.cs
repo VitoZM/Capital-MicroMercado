@@ -45,6 +45,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label7;
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtBoxEfectivo = new System.Windows.Forms.TextBox();
             this.txtBoxCostoTotal = new System.Windows.Forms.TextBox();
@@ -66,6 +67,7 @@
             this.txtBoxMontoDeuda = new System.Windows.Forms.TextBox();
             this.txtBoxMontoTotal = new System.Windows.Forms.TextBox();
             this.dgvTarjetas = new System.Windows.Forms.DataGridView();
+            this.txtBoxCapital = new System.Windows.Forms.TextBox();
             label9 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -77,6 +79,7 @@
             vEND_IDLabel = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
             this.panel1.SuspendLayout();
@@ -89,7 +92,7 @@
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(499, 298);
+            label9.Location = new System.Drawing.Point(499, 268);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(117, 16);
             label9.TabIndex = 63;
@@ -113,7 +116,7 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.ForeColor = System.Drawing.SystemColors.Control;
-            label2.Location = new System.Drawing.Point(44, 13);
+            label2.Location = new System.Drawing.Point(3, 0);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(174, 24);
             label2.TabIndex = 1;
@@ -125,7 +128,7 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(45, 54);
+            label3.Location = new System.Drawing.Point(45, 24);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(70, 16);
             label3.TabIndex = 1;
@@ -137,7 +140,7 @@
             label17.AutoSize = true;
             label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label17.ForeColor = System.Drawing.SystemColors.Control;
-            label17.Location = new System.Drawing.Point(491, 41);
+            label17.Location = new System.Drawing.Point(464, 56);
             label17.Name = "label17";
             label17.Size = new System.Drawing.Size(154, 16);
             label17.TabIndex = 64;
@@ -149,7 +152,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(16, 11);
+            label1.Location = new System.Drawing.Point(3, 0);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(173, 24);
             label1.TabIndex = 1;
@@ -161,7 +164,7 @@
             label19.AutoSize = true;
             label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label19.ForeColor = System.Drawing.SystemColors.Control;
-            label19.Location = new System.Drawing.Point(491, 67);
+            label19.Location = new System.Drawing.Point(464, 82);
             label19.Name = "label19";
             label19.Size = new System.Drawing.Size(145, 16);
             label19.TabIndex = 1;
@@ -173,7 +176,7 @@
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.ForeColor = System.Drawing.SystemColors.Control;
-            label4.Location = new System.Drawing.Point(27, 67);
+            label4.Location = new System.Drawing.Point(14, 56);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(124, 16);
             label4.TabIndex = 1;
@@ -185,7 +188,7 @@
             vEND_IDLabel.AutoSize = true;
             vEND_IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             vEND_IDLabel.ForeColor = System.Drawing.SystemColors.Control;
-            vEND_IDLabel.Location = new System.Drawing.Point(27, 41);
+            vEND_IDLabel.Location = new System.Drawing.Point(14, 30);
             vEND_IDLabel.Name = "vEND_IDLabel";
             vEND_IDLabel.Size = new System.Drawing.Size(120, 16);
             vEND_IDLabel.TabIndex = 1;
@@ -197,7 +200,7 @@
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label8.ForeColor = System.Drawing.SystemColors.Control;
-            label8.Location = new System.Drawing.Point(45, 298);
+            label8.Location = new System.Drawing.Point(45, 268);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(86, 16);
             label8.TabIndex = 63;
@@ -230,16 +233,16 @@
             this.panel2.Controls.Add(this.dgvVenta);
             this.panel2.Controls.Add(this.txtBoxBuscarCodigo);
             this.panel2.Controls.Add(label3);
-            this.panel2.Location = new System.Drawing.Point(12, 346);
+            this.panel2.Location = new System.Drawing.Point(12, 363);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(932, 339);
+            this.panel2.Size = new System.Drawing.Size(932, 304);
             this.panel2.TabIndex = 73;
             // 
             // txtBoxEfectivo
             // 
             this.txtBoxEfectivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEfectivo.Location = new System.Drawing.Point(168, 295);
+            this.txtBoxEfectivo.Location = new System.Drawing.Point(168, 265);
             this.txtBoxEfectivo.Name = "txtBoxEfectivo";
             this.txtBoxEfectivo.Size = new System.Drawing.Size(149, 22);
             this.txtBoxEfectivo.TabIndex = 64;
@@ -248,7 +251,7 @@
             // 
             this.txtBoxCostoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxCostoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCostoTotal.Location = new System.Drawing.Point(622, 295);
+            this.txtBoxCostoTotal.Location = new System.Drawing.Point(622, 265);
             this.txtBoxCostoTotal.Name = "txtBoxCostoTotal";
             this.txtBoxCostoTotal.ReadOnly = true;
             this.txtBoxCostoTotal.Size = new System.Drawing.Size(149, 22);
@@ -274,7 +277,7 @@
             this.btnProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProcesar.ForeColor = System.Drawing.Color.Silver;
             this.btnProcesar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcesar.Location = new System.Drawing.Point(791, 284);
+            this.btnProcesar.Location = new System.Drawing.Point(791, 254);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(120, 42);
             this.btnProcesar.TabIndex = 62;
@@ -295,7 +298,7 @@
             this.btnBuscarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProducto.ForeColor = System.Drawing.Color.Silver;
             this.btnBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(312, 42);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(312, 12);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(109, 35);
             this.btnBuscarProducto.TabIndex = 62;
@@ -338,7 +341,7 @@
             this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVenta.EnableHeadersVisualStyles = false;
             this.dgvVenta.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvVenta.Location = new System.Drawing.Point(3, 80);
+            this.dgvVenta.Location = new System.Drawing.Point(3, 50);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -352,6 +355,7 @@
             this.dgvVenta.Size = new System.Drawing.Size(923, 198);
             this.dgvVenta.TabIndex = 9;
             this.dgvVenta.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVenta_CellValueChanged);
+            this.dgvVenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvVenta_KeyDown);
             // 
             // columnaCodigo
             // 
@@ -405,7 +409,7 @@
             // txtBoxBuscarCodigo
             // 
             this.txtBoxBuscarCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxBuscarCodigo.Location = new System.Drawing.Point(157, 54);
+            this.txtBoxBuscarCodigo.Location = new System.Drawing.Point(157, 24);
             this.txtBoxBuscarCodigo.Name = "txtBoxBuscarCodigo";
             this.txtBoxBuscarCodigo.Size = new System.Drawing.Size(149, 20);
             this.txtBoxBuscarCodigo.TabIndex = 12;
@@ -416,8 +420,10 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(label17);
             this.panel1.Controls.Add(label1);
+            this.panel1.Controls.Add(this.txtBoxCapital);
             this.panel1.Controls.Add(this.txtBoxMontoEfectivo);
             this.panel1.Controls.Add(this.txtBoxMontoPrestado);
+            this.panel1.Controls.Add(label7);
             this.panel1.Controls.Add(this.txtBoxMontoDeuda);
             this.panel1.Controls.Add(this.txtBoxMontoTotal);
             this.panel1.Controls.Add(label19);
@@ -426,47 +432,47 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(12, 246);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(932, 94);
+            this.panel1.Size = new System.Drawing.Size(932, 111);
             this.panel1.TabIndex = 71;
             // 
             // txtBoxMontoEfectivo
             // 
             this.txtBoxMontoEfectivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxMontoEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMontoEfectivo.Location = new System.Drawing.Point(652, 64);
+            this.txtBoxMontoEfectivo.Location = new System.Drawing.Point(669, 79);
             this.txtBoxMontoEfectivo.Name = "txtBoxMontoEfectivo";
             this.txtBoxMontoEfectivo.ReadOnly = true;
-            this.txtBoxMontoEfectivo.Size = new System.Drawing.Size(257, 21);
+            this.txtBoxMontoEfectivo.Size = new System.Drawing.Size(213, 21);
             this.txtBoxMontoEfectivo.TabIndex = 1;
             // 
             // txtBoxMontoPrestado
             // 
             this.txtBoxMontoPrestado.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxMontoPrestado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMontoPrestado.Location = new System.Drawing.Point(652, 38);
+            this.txtBoxMontoPrestado.Location = new System.Drawing.Point(669, 53);
             this.txtBoxMontoPrestado.Name = "txtBoxMontoPrestado";
             this.txtBoxMontoPrestado.ReadOnly = true;
-            this.txtBoxMontoPrestado.Size = new System.Drawing.Size(257, 21);
+            this.txtBoxMontoPrestado.Size = new System.Drawing.Size(213, 21);
             this.txtBoxMontoPrestado.TabIndex = 1;
             // 
             // txtBoxMontoDeuda
             // 
             this.txtBoxMontoDeuda.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxMontoDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMontoDeuda.Location = new System.Drawing.Point(188, 64);
+            this.txtBoxMontoDeuda.Location = new System.Drawing.Point(175, 53);
             this.txtBoxMontoDeuda.Name = "txtBoxMontoDeuda";
             this.txtBoxMontoDeuda.ReadOnly = true;
-            this.txtBoxMontoDeuda.Size = new System.Drawing.Size(257, 21);
+            this.txtBoxMontoDeuda.Size = new System.Drawing.Size(225, 21);
             this.txtBoxMontoDeuda.TabIndex = 1;
             // 
             // txtBoxMontoTotal
             // 
             this.txtBoxMontoTotal.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMontoTotal.Location = new System.Drawing.Point(188, 38);
+            this.txtBoxMontoTotal.Location = new System.Drawing.Point(175, 27);
             this.txtBoxMontoTotal.Name = "txtBoxMontoTotal";
             this.txtBoxMontoTotal.ReadOnly = true;
-            this.txtBoxMontoTotal.Size = new System.Drawing.Size(257, 21);
+            this.txtBoxMontoTotal.Size = new System.Drawing.Size(225, 21);
             this.txtBoxMontoTotal.TabIndex = 1;
             // 
             // dgvTarjetas
@@ -511,6 +517,29 @@
             this.dgvTarjetas.Size = new System.Drawing.Size(932, 210);
             this.dgvTarjetas.TabIndex = 9;
             this.dgvTarjetas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTarjetas_CellDoubleClick);
+            this.dgvTarjetas.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvTarjetas_KeyDown);
+            // 
+            // label7
+            // 
+            label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.ForeColor = System.Drawing.SystemColors.Control;
+            label7.Location = new System.Drawing.Point(464, 30);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(182, 16);
+            label7.TabIndex = 1;
+            label7.Text = "CAPITAL EN TARJETAS:";
+            // 
+            // txtBoxCapital
+            // 
+            this.txtBoxCapital.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxCapital.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxCapital.Location = new System.Drawing.Point(669, 27);
+            this.txtBoxCapital.Name = "txtBoxCapital";
+            this.txtBoxCapital.ReadOnly = true;
+            this.txtBoxCapital.Size = new System.Drawing.Size(213, 21);
+            this.txtBoxCapital.TabIndex = 1;
             // 
             // FormTarjetas
             // 
@@ -558,5 +587,6 @@
         private System.Windows.Forms.TextBox txtBoxMontoDeuda;
         private System.Windows.Forms.TextBox txtBoxMontoTotal;
         private System.Windows.Forms.DataGridView dgvTarjetas;
+        private System.Windows.Forms.TextBox txtBoxCapital;
     }
 }
