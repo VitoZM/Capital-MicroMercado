@@ -184,5 +184,11 @@ namespace TALLER.Vista
                 txtBoxNombre.ForeColor = Color.Black;
             }
         }
+
+        private void btnListarCompras_Click(object sender, EventArgs e)
+        {
+            FormProductoComprado frm = new FormProductoComprado(producto.IDPRODUCTO);
+            frm.Show();
+        }
     }
 }

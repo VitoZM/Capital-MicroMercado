@@ -21,10 +21,12 @@ namespace TALLER.Vista
         private Compra compra;
         private Distribuidora distribuidora;
         private List<Lote> listaLote = new List<Lote>();
+        private Usuario usuario;
 
-        public FormTarjetas()
+        public FormTarjetas(Usuario u)
         {
             InitializeComponent();
+            usuario = u;
         }
 
         private void FormTarjetas_Load(object sender, EventArgs e)
@@ -97,9 +99,10 @@ namespace TALLER.Vista
                 this.dgvVenta.Rows[fila].Cells[1].Value = producto.NOMBRE + " " + producto.MARCA;
                 this.dgvVenta.Rows[fila].Cells[2].Value = producto.CONTENIDO;
                 this.dgvVenta.Rows[fila].Cells[4].Value = producto.PRECIOCOMPRA.ToString();
+                this.dgvVenta.Rows[fila].Cells[5].Value = "0";
                 this.dgvVenta.Rows[fila].Cells[6].Value = producto.IDPRODUCTO;
                 this.dgvVenta.ClearSelection();
-                this.dgvVenta.Rows[fila].Cells[5].Selected = true;
+                this.dgvVenta.Rows[fila].Cells[3].Selected = true;
 
                 this.txtBoxBuscarCodigo.Text = "";
             }
@@ -126,7 +129,11 @@ namespace TALLER.Vista
             {
                 instanciarDistribuidora();
                 instanciarCompra();
-                instanciarLote();
+                if (instanciarLote())
+                {
+                    MessageBox.Show("NO SE INSERTO NINGUNA TARJETA");
+                    return;
+                }
                 actualizarCaja();
                 bd.insertarCompra(compra, distribuidora, listaLote);
                 cargarMontos();
@@ -140,11 +147,11 @@ namespace TALLER.Vista
         {
             decimal costoTotal = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
             decimal efectivo = bd.convertirDecimal(this.txtBoxEfectivo.Text);
-            decimal deuda = Math.Abs(efectivo - costoTotal);
+            decimal deuda = (efectivo - costoTotal) * (-1);
             bd.compraTarjeta(costoTotal, efectivo, deuda);
         }
 
-        private void instanciarLote()
+        private bool instanciarLote()
         {
             Lote lote;
             foreach (DataGridViewRow row in this.dgvVenta.Rows)
@@ -159,6 +166,7 @@ namespace TALLER.Vista
                     this.listaLote.Add(lote);
                 }
             }
+            return this.listaLote.Count <= 0 ? true : false;
         }
 
         private void instanciarCompra()
@@ -166,7 +174,7 @@ namespace TALLER.Vista
             string descripcion = "COMPRA DE TARJETAS";
             decimal costoTotal = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
 
-            compra = new Compra(-1, "", costoTotal, descripcion, -1, 1, 0, costoTotal);
+            compra = new Compra(-1, "", costoTotal, descripcion, -1, usuario.IDUSUARIO, 0, costoTotal);
         }
 
         private void instanciarDistribuidora()
@@ -185,6 +193,9 @@ namespace TALLER.Vista
             this.dgvVenta.Rows.Clear();
             this.txtBoxCostoTotal.Text = "0";
             this.txtBoxBuscarCodigo.Focus();
+            this.txtBoxEfectivo.Text = "";
+            this.lblTipo.Text = "AMORTIZAR";
+            this.txtBoxTipo.Text = "0";
         }
 
         private void dgvVenta_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -266,6 +277,31 @@ namespace TALLER.Vista
 
                 }
             }
+        }
+
+        private void btnListarVentas_Click(object sender, EventArgs e)
+        {
+            FormMisCompras frm = new FormMisCompras(usuario, false);
+            frm.ShowDialog();
+        }
+
+        private void txtBoxEfectivo_TextChanged(object sender, EventArgs e)
+        {
+            decimal efectivo = bd.convertirDecimal(this.txtBoxEfectivo.Text);
+            decimal costoT = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
+            decimal tipo = efectivo - costoT;
+
+            if (tipo <= 0)
+                this.lblTipo.Text = "DEUDA";
+            else
+                this.lblTipo.Text = "AMORTIZAR";
+
+            this.txtBoxTipo.Text = Math.Abs(tipo).ToString();
+        }
+
+        private void txtBoxCostoTotal_TextChanged(object sender, EventArgs e)
+        {
+            txtBoxEfectivo_TextChanged(sender, e);
         }
     }
 }

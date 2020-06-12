@@ -35,6 +35,40 @@ namespace TALLER.Controlador
             this.conn.Close();
         }
 
+        internal List<ListaLote> listarProductoComprado(int idProducto)
+        {
+            try
+            {
+                string comando;
+                comando = "EXEC LISTARPRODUCTOCOMPRADO " + idProducto;
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                SqlDataReader myReader = null;
+                myReader = cmd.ExecuteReader();
+                List<ListaLote> lis = new List<ListaLote>();
+                while (myReader.Read())
+                {
+                    int cantidad = convertirEntero(myReader["cantidad"].ToString());
+                    string codigo = myReader["codigo"].ToString();
+                    string producto = myReader["producto"].ToString();
+                    string fecha = myReader["fecha"].ToString();
+
+                    ListaLote ll = new ListaLote(1, 1, 1, fecha, cantidad, 1, 1, 1, 1, codigo, producto, "");
+                    lis.Add(ll);
+                }
+                this.conn.Close();
+                return lis;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return null;
+        }
+
         public decimal obtenerMontoPrestadoTarjetas()
         {
             try
@@ -56,6 +90,77 @@ namespace TALLER.Controlador
             return 0;
         }
 
+        internal List<ListaCompra> listarComprasFinal()
+        {
+            try
+            {
+                string comando;
+                comando = "EXEC LISTARCOMPRASFINAL";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                SqlDataReader myReader = null;
+                myReader = cmd.ExecuteReader();
+                List<ListaCompra> lis = new List<ListaCompra>();
+                while (myReader.Read())
+                {
+                    int id = convertirEntero(myReader["IDCOMPRA"].ToString());
+                    string nombreUsuario = myReader["VENDEDOR"].ToString();
+                    string nombreDistribuidora = myReader["DISTRIBUIDORA"].ToString();
+                    string fecha = myReader["fecha"].ToString();
+                    decimal costoTotal = convertirDecimal(myReader["costototal"].ToString());
+                    string descripcion = myReader["DESCRIPCION"].ToString();
+                    decimal descuento = convertirDecimal(myReader["DESCUENTO"].ToString());
+                    decimal costoFinal = convertirDecimal(myReader["CostoFinal"].ToString());
+
+                    ListaCompra lc = new ListaCompra(id, fecha, costoTotal, descripcion, 0, 0, descuento, costoFinal, nombreUsuario, nombreDistribuidora);
+                    lis.Add(lc);
+                }
+                this.conn.Close();
+                return lis;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return null;
+        }
+
+        internal List<ListaVenta> listarVentasFinal()
+        {
+            string comando;
+            comando = "SELECT * FROM LISTARVENTASFINAL";
+            SqlCommand cmd = new SqlCommand();
+            this.conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = comando;
+            SqlDataReader myReader = null;
+            myReader = cmd.ExecuteReader();
+            List<ListaVenta> lis = new List<ListaVenta>();
+            while (myReader.Read())
+            {
+                int id = convertirEntero(myReader["IDVENTA"].ToString());
+                string vendedor = myReader["VENDEDOR"].ToString();
+                string cliente = myReader["CLIENTE"].ToString();
+                string ciCliente = myReader["CICLIENTE"].ToString();
+                string fecha = myReader["fecha"].ToString();
+                decimal costoTotal = convertirDecimal(myReader["costototal"].ToString());
+                decimal efectivo = convertirDecimal(myReader["efectivo"].ToString());
+                decimal cambio = convertirDecimal(myReader["cambio"].ToString());
+                string pago = myReader["pago"].ToString();
+                string estado = myReader["estado"].ToString();
+                string descripcion = myReader["DESCRIPCION"].ToString();
+                decimal costoTarjeta = convertirDecimal(myReader["COSTOTARJETA"].ToString());
+
+                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, costoTarjeta, vendedor, cliente, ciCliente, descripcion);
+                lis.Add(ven);
+            }
+            this.conn.Close();
+            return lis;
+        }
+
         public decimal obtenerCapitalTarjetas()
         {
             try
@@ -75,6 +180,44 @@ namespace TALLER.Controlador
                 this.conn.Close();
             }
             return 0;
+        }
+
+        internal List<ListaCompra> listarComprasTarjetas()
+        {
+            try
+            {
+                string comando;
+                comando = "SELECT * FROM LISTARCOMPRAS WHERE DISTRIBUIDORA='RUTERO'";
+                SqlCommand cmd = new SqlCommand();
+                this.conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = comando;
+                SqlDataReader myReader = null;
+                myReader = cmd.ExecuteReader();
+                List<ListaCompra> lis = new List<ListaCompra>();
+                while (myReader.Read())
+                {
+                    int id = convertirEntero(myReader["IDCOMPRA"].ToString());
+                    string nombreUsuario = myReader["VENDEDOR"].ToString();
+                    string nombreDistribuidora = myReader["DISTRIBUIDORA"].ToString();
+                    string fecha = myReader["fecha"].ToString();
+                    decimal costoTotal = convertirDecimal(myReader["costototal"].ToString());
+                    string descripcion = myReader["DESCRIPCION"].ToString();
+                    decimal descuento = convertirDecimal(myReader["DESCUENTO"].ToString());
+                    decimal costoFinal = convertirDecimal(myReader["CostoFinal"].ToString());
+
+                    ListaCompra lc = new ListaCompra(id, fecha, costoTotal, descripcion, 0, 0, descuento, costoFinal, nombreUsuario, nombreDistribuidora);
+                    lis.Add(lc);
+                }
+                this.conn.Close();
+                return lis;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                this.conn.Close();
+            }
+            return null;
         }
 
         public decimal obtenerMontoEfectivoTarjetas()
@@ -449,6 +592,39 @@ namespace TALLER.Controlador
                 MessageBox.Show(ex.ToString());
                 this.conn.Close();
             }
+        }
+
+        public ListaVenta obtenerUltimaVenta()
+        {
+            string comando;
+            comando = "EXEC OBTENERULTIMAVENTA";
+            SqlCommand cmd = new SqlCommand();
+            this.conn.Open();
+            cmd.Connection = conn;
+            cmd.CommandText = comando;
+            SqlDataReader myReader = null;
+            myReader = cmd.ExecuteReader();
+            List<ListaVenta> lis = new List<ListaVenta>();
+            while (myReader.Read())
+            {
+                int id = convertirEntero(myReader["IDVENTA"].ToString());
+                string vendedor = myReader["VENDEDOR"].ToString();
+                string cliente = myReader["CLIENTE"].ToString();
+                string ciCliente = myReader["CICLIENTE"].ToString();
+                string fecha = myReader["fecha"].ToString();
+                decimal costoTotal = convertirDecimal(myReader["costototal"].ToString());
+                decimal efectivo = convertirDecimal(myReader["efectivo"].ToString());
+                decimal cambio = convertirDecimal(myReader["cambio"].ToString());
+                string pago = myReader["pago"].ToString();
+                string estado = myReader["estado"].ToString();
+                string descripcion = myReader["DESCRIPCION"].ToString();
+                decimal costoTarjeta = convertirDecimal(myReader["COSTOTARJETA"].ToString());
+
+                ListaVenta ven = new ListaVenta(id, -1, -1, fecha, costoTotal, efectivo, cambio, estado, pago, costoTarjeta, vendedor, cliente, ciCliente, descripcion);
+                lis.Add(ven);
+            }
+            this.conn.Close();
+            return lis[0];
         }
 
         public decimal obtenerMontoVentasHoy(int iDUSUARIO, string tipo)
@@ -1120,7 +1296,7 @@ namespace TALLER.Controlador
         {
             try
             {
-                string comando = "EXEC INSERTARCOMPRA " + sinComas(compra.COSTOTOTAL) + ",'" + compra.DESCRIPCION + "','" + distribuidora.NOMBRE + "','" + distribuidora.DIRECCION + "','" + distribuidora.TELEFONO + "','" + distribuidora.CATEGORIA + "'," + compra.IDUSUARIO + "," + sinComas(compra.DESCUENTO) + "," + sinComas(compra.COSTOFINAL);
+                string comando = "EXEC INSERTARCOMPRA " + sinComas(compra.COSTOTOTAL) + ",'" + compra.DESCRIPCION + "','" + distribuidora.NOMBRE + "','" + distribuidora.DIRECCION + "','" + distribuidora.TELEFONO + "','" + distribuidora.CATEGORIA + "'," + compra.IDUSUARIO + "," + sinComas(compra.DESCUENTO) + "," + sinComas(compra.COSTOFINAL) + ",'" +compra.FECHA + "'";
                 SqlCommand cmd = new SqlCommand();
                 this.conn.Open();
                 cmd.Connection = conn;

@@ -48,7 +48,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(376, 11);
+            label1.Location = new System.Drawing.Point(419, 5);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(203, 24);
             label1.TabIndex = 1;
@@ -60,7 +60,7 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(307, 85);
+            label3.Location = new System.Drawing.Point(331, 49);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(154, 16);
             label3.TabIndex = 63;
@@ -81,11 +81,15 @@
             // txtBoxCodigo
             // 
             this.txtBoxCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxCodigo.Location = new System.Drawing.Point(485, 81);
+            this.txtBoxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
+            this.txtBoxCodigo.Location = new System.Drawing.Point(514, 40);
             this.txtBoxCodigo.Name = "txtBoxCodigo";
-            this.txtBoxCodigo.Size = new System.Drawing.Size(164, 20);
+            this.txtBoxCodigo.Size = new System.Drawing.Size(218, 29);
             this.txtBoxCodigo.TabIndex = 0;
             this.txtBoxCodigo.TextChanged += new System.EventHandler(this.txtBoxCodigo_TextChanged);
+            this.txtBoxCodigo.Enter += new System.EventHandler(this.txtBoxCodigo_Enter);
+            this.txtBoxCodigo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBoxCodigo_KeyDown);
+            this.txtBoxCodigo.Leave += new System.EventHandler(this.txtBoxCodigo_Leave);
             // 
             // dgvAlmacenamiento
             // 
@@ -116,7 +120,7 @@
             this.dgvAlmacenamiento.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAlmacenamiento.EnableHeadersVisualStyles = false;
             this.dgvAlmacenamiento.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvAlmacenamiento.Location = new System.Drawing.Point(3, 135);
+            this.dgvAlmacenamiento.Location = new System.Drawing.Point(3, 80);
             this.dgvAlmacenamiento.Name = "dgvAlmacenamiento";
             this.dgvAlmacenamiento.ReadOnly = true;
             this.dgvAlmacenamiento.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -128,9 +132,10 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAlmacenamiento.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAlmacenamiento.Size = new System.Drawing.Size(1108, 445);
+            this.dgvAlmacenamiento.Size = new System.Drawing.Size(1108, 471);
             this.dgvAlmacenamiento.TabIndex = 50;
             this.dgvAlmacenamiento.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlmacenamiento_CellDoubleClick);
+            this.dgvAlmacenamiento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvAlmacenamiento_KeyDown);
             // 
             // FormAlmacenamiento
             // 

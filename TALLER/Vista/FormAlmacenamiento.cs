@@ -75,13 +75,8 @@ namespace TALLER.CapaVista
                 this.dgvAlmacenamiento.DataSource = tabla;
         }
 
-        private void dgvAlmacenamiento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void seleccionarFila(DataGridViewRow row)
         {
-            if (!(e.RowIndex > -1))
-                return;
-
-            DataGridViewRow row = dgvAlmacenamiento.Rows[e.RowIndex];
-
             int cantidad = bd.convertirEntero(row.Cells[0].Value.ToString());
             string codigo = row.Cells[1].Value.ToString();
             string nombre = row.Cells[2].Value.ToString();
@@ -112,6 +107,62 @@ namespace TALLER.CapaVista
                     cargarDatos();
                     this.txtBoxCodigo.Focus();
                 }
+            }
+        }
+
+        private void dgvAlmacenamiento_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (!(e.RowIndex > -1))
+                return;
+
+            DataGridViewRow row = dgvAlmacenamiento.Rows[e.RowIndex];
+            seleccionarFila(row);
+        }
+
+        private void txtBoxCodigo_Enter(object sender, EventArgs e)
+        {
+            this.txtBoxCodigo.BackColor = Color.FromArgb(243, 195, 151);
+        }
+
+        private void txtBoxCodigo_Leave(object sender, EventArgs e)
+        {
+            this.txtBoxCodigo.BackColor = Color.White;
+        }
+
+        private void primeraFila()
+        {
+            if(dgvAlmacenamiento.Rows.Count > 0)
+            {
+                dgvAlmacenamiento.Rows[0].Selected = true;
+                dgvAlmacenamiento.Focus();
+            }
+        }
+
+        private void txtBoxCodigo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                primeraFila();
+            }
+
+            if (e.KeyCode == Keys.Down)
+            {
+                e.SuppressKeyPress = true;
+
+                primeraFila();
+            }
+        }
+
+        private void dgvAlmacenamiento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+                DataGridViewRow row = dgvAlmacenamiento.CurrentRow;
+                seleccionarFila(row);
             }
         }
     }

@@ -330,7 +330,7 @@ namespace TALLER.CapaVista
         private void btnIngresos_Click(object sender, EventArgs e)
         {
             int yDesplazamiento = 120;
-
+            
             if (!banIngresos)
             {
                 cambiarControl(pnlIngresos, ref banIngresos);
@@ -406,9 +406,9 @@ namespace TALLER.CapaVista
 
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-            /*int yDesplazamiento = 180;
+            int yDesplazamiento = 180;
 
-            if (!banRecursos)
+            if (!banConsultas)
             {
                 cambiarControl(pnlConsultas, ref banConsultas);
                 btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y + yDesplazamiento);
@@ -417,7 +417,7 @@ namespace TALLER.CapaVista
             {
                 cambiarControl(pnlConsultas, ref banConsultas);
                 btnTarjetas.Location = new Point(btnTarjetas.Location.X, btnTarjetas.Location.Y - yDesplazamiento);
-            }*/
+            }
         }
 
         private void btnDistribuidoras_Click(object sender, EventArgs e)
@@ -469,7 +469,23 @@ namespace TALLER.CapaVista
 
         private void btnTarjetas_Click(object sender, EventArgs e)
         {
-            FormTarjetas frm = new FormTarjetas();
+            FormTarjetas frm = new FormTarjetas(usuario);
+            frm.FormClosed += new FormClosedEventHandler(mostrarlogoAlCerrarForm);
+            AbrirFormInPanel(frm);
+        }
+
+        private void btnListarIngresos_Click(object sender, EventArgs e)
+        {
+            FormListadoVentas frm = new FormListadoVentas();
+            btnConsultas_Click(sender, e);
+            frm.FormClosed += new FormClosedEventHandler(mostrarlogoAlCerrarForm);
+            AbrirFormInPanel(frm);
+        }
+
+        private void btnListarEgresos_Click(object sender, EventArgs e)
+        {
+            FromListadoCompras frm = new FromListadoCompras(usuario);
+            btnConsultas_Click(sender, e);
             frm.FormClosed += new FormClosedEventHandler(mostrarlogoAlCerrarForm);
             AbrirFormInPanel(frm);
         }

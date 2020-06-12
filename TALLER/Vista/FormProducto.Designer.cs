@@ -57,6 +57,7 @@
             this.txtBoxCodigo = new System.Windows.Forms.TextBox();
             this.txtBoxId = new System.Windows.Forms.TextBox();
             this.txtBoxUnidad = new System.Windows.Forms.ComboBox();
+            this.btnListarCompras = new System.Windows.Forms.Button();
             label27 = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
@@ -82,10 +83,9 @@
             label27.AutoSize = true;
             label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label27.ForeColor = System.Drawing.Color.Red;
-            label27.Location = new System.Drawing.Point(615, 337);
-            label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label27.Location = new System.Drawing.Point(461, 274);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(21, 25);
+            label27.Size = new System.Drawing.Size(16, 20);
             label27.TabIndex = 96;
             label27.Text = "*";
             // 
@@ -95,10 +95,9 @@
             label26.AutoSize = true;
             label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label26.ForeColor = System.Drawing.Color.Red;
-            label26.Location = new System.Drawing.Point(615, 303);
-            label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label26.Location = new System.Drawing.Point(461, 246);
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(21, 25);
+            label26.Size = new System.Drawing.Size(16, 20);
             label26.TabIndex = 95;
             label26.Text = "*";
             // 
@@ -108,10 +107,9 @@
             label25.AutoSize = true;
             label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label25.ForeColor = System.Drawing.Color.Red;
-            label25.Location = new System.Drawing.Point(615, 271);
-            label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label25.Location = new System.Drawing.Point(461, 220);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(21, 25);
+            label25.Size = new System.Drawing.Size(16, 20);
             label25.TabIndex = 94;
             label25.Text = "*";
             // 
@@ -121,10 +119,9 @@
             label24.AutoSize = true;
             label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label24.ForeColor = System.Drawing.Color.Red;
-            label24.Location = new System.Drawing.Point(675, 226);
-            label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label24.Location = new System.Drawing.Point(506, 184);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(21, 25);
+            label24.Size = new System.Drawing.Size(16, 20);
             label24.TabIndex = 93;
             label24.Text = "*";
             // 
@@ -134,10 +131,9 @@
             label23.AutoSize = true;
             label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label23.ForeColor = System.Drawing.Color.Red;
-            label23.Location = new System.Drawing.Point(675, 160);
-            label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label23.Location = new System.Drawing.Point(506, 130);
             label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(21, 25);
+            label23.Size = new System.Drawing.Size(16, 20);
             label23.TabIndex = 92;
             label23.Text = "*";
             // 
@@ -147,10 +143,9 @@
             label21.AutoSize = true;
             label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label21.ForeColor = System.Drawing.Color.Red;
-            label21.Location = new System.Drawing.Point(675, 129);
-            label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label21.Location = new System.Drawing.Point(506, 105);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(21, 25);
+            label21.Size = new System.Drawing.Size(16, 20);
             label21.TabIndex = 90;
             label21.Text = "*";
             // 
@@ -160,10 +155,9 @@
             label17.AutoSize = true;
             label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label17.ForeColor = System.Drawing.SystemColors.Control;
-            label17.Location = new System.Drawing.Point(109, 161);
-            label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label17.Location = new System.Drawing.Point(82, 131);
             label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(80, 20);
+            label17.Size = new System.Drawing.Size(65, 16);
             label17.TabIndex = 89;
             label17.Text = "MARCA:";
             // 
@@ -173,10 +167,9 @@
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label6.ForeColor = System.Drawing.SystemColors.Control;
-            label6.Location = new System.Drawing.Point(109, 226);
-            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Location = new System.Drawing.Point(82, 184);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(180, 20);
+            label6.Size = new System.Drawing.Size(147, 16);
             label6.TabIndex = 77;
             label6.Text = "CONTENIDO NETO:";
             // 
@@ -186,10 +179,9 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(20, 11);
-            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Location = new System.Drawing.Point(15, 9);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(259, 29);
+            label1.Size = new System.Drawing.Size(204, 24);
             label1.TabIndex = 79;
             label1.Text = "EDITAR PRODUCTO";
             // 
@@ -199,10 +191,9 @@
             label19.AutoSize = true;
             label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label19.ForeColor = System.Drawing.SystemColors.Control;
-            label19.Location = new System.Drawing.Point(109, 193);
-            label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label19.Location = new System.Drawing.Point(82, 157);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(157, 20);
+            label19.Size = new System.Drawing.Size(130, 16);
             label19.TabIndex = 74;
             label19.Text = "PRESENTACION:";
             // 
@@ -212,10 +203,9 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label5.ForeColor = System.Drawing.SystemColors.Control;
-            label5.Location = new System.Drawing.Point(109, 337);
-            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Location = new System.Drawing.Point(82, 274);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(121, 20);
+            label5.Size = new System.Drawing.Size(99, 16);
             label5.TabIndex = 73;
             label5.Text = "CATEGORIA:";
             // 
@@ -225,10 +215,9 @@
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(109, 303);
-            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label7.Location = new System.Drawing.Point(82, 246);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(116, 20);
+            label7.Size = new System.Drawing.Size(93, 16);
             label7.TabIndex = 72;
             label7.Text = "UBICACION:";
             // 
@@ -238,10 +227,9 @@
             label14.AutoSize = true;
             label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label14.ForeColor = System.Drawing.SystemColors.Control;
-            label14.Location = new System.Drawing.Point(109, 271);
-            label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label14.Location = new System.Drawing.Point(82, 220);
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(150, 20);
+            label14.Size = new System.Drawing.Size(123, 16);
             label14.TabIndex = 71;
             label14.Text = "PRECIO VENTA:";
             // 
@@ -251,10 +239,9 @@
             label15.AutoSize = true;
             label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label15.ForeColor = System.Drawing.SystemColors.Control;
-            label15.Location = new System.Drawing.Point(109, 372);
-            label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label15.Location = new System.Drawing.Point(82, 302);
             label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(141, 20);
+            label15.Size = new System.Drawing.Size(114, 16);
             label15.TabIndex = 78;
             label15.Text = "DESCRIPCION:";
             // 
@@ -264,10 +251,9 @@
             vEND_IDLabel.AutoSize = true;
             vEND_IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             vEND_IDLabel.ForeColor = System.Drawing.SystemColors.Control;
-            vEND_IDLabel.Location = new System.Drawing.Point(109, 97);
-            vEND_IDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            vEND_IDLabel.Location = new System.Drawing.Point(82, 79);
             vEND_IDLabel.Name = "vEND_IDLabel";
-            vEND_IDLabel.Size = new System.Drawing.Size(89, 20);
+            vEND_IDLabel.Size = new System.Drawing.Size(70, 16);
             vEND_IDLabel.TabIndex = 70;
             vEND_IDLabel.Text = "CODIGO:";
             // 
@@ -277,10 +263,9 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(109, 53);
-            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Location = new System.Drawing.Point(82, 43);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(150, 20);
+            label3.Size = new System.Drawing.Size(120, 16);
             label3.TabIndex = 97;
             label3.Text = "ID PRODUCTO: ";
             // 
@@ -290,10 +275,9 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.ForeColor = System.Drawing.SystemColors.Control;
-            label2.Location = new System.Drawing.Point(109, 129);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Location = new System.Drawing.Point(82, 105);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(57, 20);
+            label2.Size = new System.Drawing.Size(47, 16);
             label2.TabIndex = 89;
             label2.Text = "TIPO:";
             // 
@@ -302,10 +286,9 @@
             this.txtBoxMarca.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxMarca.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxMarca.Location = new System.Drawing.Point(324, 156);
-            this.txtBoxMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxMarca.Location = new System.Drawing.Point(243, 127);
             this.txtBoxMarca.Name = "txtBoxMarca";
-            this.txtBoxMarca.Size = new System.Drawing.Size(341, 24);
+            this.txtBoxMarca.Size = new System.Drawing.Size(257, 21);
             this.txtBoxMarca.TabIndex = 81;
             this.txtBoxMarca.Text = "NESTLE, KRIS, ARCOR, ETC.";
             // 
@@ -320,10 +303,9 @@
             "LADO MEDIO",
             "LADO DERECHO",
             "LADO ENTRADA"});
-            this.txtBoxUbicacion.Location = new System.Drawing.Point(324, 299);
-            this.txtBoxUbicacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUbicacion.Location = new System.Drawing.Point(243, 243);
             this.txtBoxUbicacion.Name = "txtBoxUbicacion";
-            this.txtBoxUbicacion.Size = new System.Drawing.Size(281, 26);
+            this.txtBoxUbicacion.Size = new System.Drawing.Size(212, 23);
             this.txtBoxUbicacion.TabIndex = 85;
             // 
             // txtBoxContenido
@@ -331,10 +313,9 @@
             this.txtBoxContenido.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxContenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxContenido.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxContenido.Location = new System.Drawing.Point(324, 223);
-            this.txtBoxContenido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxContenido.Location = new System.Drawing.Point(243, 181);
             this.txtBoxContenido.Name = "txtBoxContenido";
-            this.txtBoxContenido.Size = new System.Drawing.Size(161, 24);
+            this.txtBoxContenido.Size = new System.Drawing.Size(122, 21);
             this.txtBoxContenido.TabIndex = 83;
             // 
             // txtBoxCategoria
@@ -342,10 +323,9 @@
             this.txtBoxCategoria.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCategoria.FormattingEnabled = true;
-            this.txtBoxCategoria.Location = new System.Drawing.Point(324, 334);
-            this.txtBoxCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxCategoria.Location = new System.Drawing.Point(243, 271);
             this.txtBoxCategoria.Name = "txtBoxCategoria";
-            this.txtBoxCategoria.Size = new System.Drawing.Size(281, 26);
+            this.txtBoxCategoria.Size = new System.Drawing.Size(212, 23);
             this.txtBoxCategoria.TabIndex = 86;
             // 
             // btnGuardarProducto
@@ -360,10 +340,9 @@
             this.btnGuardarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarProducto.ForeColor = System.Drawing.Color.Silver;
             this.btnGuardarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardarProducto.Location = new System.Drawing.Point(308, 454);
-            this.btnGuardarProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardarProducto.Location = new System.Drawing.Point(85, 371);
             this.btnGuardarProducto.Name = "btnGuardarProducto";
-            this.btnGuardarProducto.Size = new System.Drawing.Size(344, 70);
+            this.btnGuardarProducto.Size = new System.Drawing.Size(258, 57);
             this.btnGuardarProducto.TabIndex = 88;
             this.btnGuardarProducto.Text = "GUARDAR";
             this.btnGuardarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -375,10 +354,9 @@
             this.txtBoxPresentacion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxPresentacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPresentacion.ForeColor = System.Drawing.Color.Gray;
-            this.txtBoxPresentacion.Location = new System.Drawing.Point(324, 190);
-            this.txtBoxPresentacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPresentacion.Location = new System.Drawing.Point(243, 154);
             this.txtBoxPresentacion.Name = "txtBoxPresentacion";
-            this.txtBoxPresentacion.Size = new System.Drawing.Size(341, 24);
+            this.txtBoxPresentacion.Size = new System.Drawing.Size(257, 21);
             this.txtBoxPresentacion.TabIndex = 82;
             this.txtBoxPresentacion.Text = "SEGUNDA MARCA, SABOR, LATA, ETC.";
             // 
@@ -386,10 +364,9 @@
             // 
             this.txtBoxPrecioVenta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxPrecioVenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPrecioVenta.Location = new System.Drawing.Point(324, 267);
-            this.txtBoxPrecioVenta.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxPrecioVenta.Location = new System.Drawing.Point(243, 217);
             this.txtBoxPrecioVenta.Name = "txtBoxPrecioVenta";
-            this.txtBoxPrecioVenta.Size = new System.Drawing.Size(281, 24);
+            this.txtBoxPrecioVenta.Size = new System.Drawing.Size(212, 21);
             this.txtBoxPrecioVenta.TabIndex = 84;
             // 
             // txtBoxNombre
@@ -397,10 +374,9 @@
             this.txtBoxNombre.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNombre.ForeColor = System.Drawing.Color.Black;
-            this.txtBoxNombre.Location = new System.Drawing.Point(324, 126);
-            this.txtBoxNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNombre.Location = new System.Drawing.Point(243, 102);
             this.txtBoxNombre.Name = "txtBoxNombre";
-            this.txtBoxNombre.Size = new System.Drawing.Size(341, 24);
+            this.txtBoxNombre.Size = new System.Drawing.Size(257, 21);
             this.txtBoxNombre.TabIndex = 80;
             this.txtBoxNombre.Text = "LECHE, CHOCOLATE, SHAMPOO, ETC.";
             // 
@@ -408,32 +384,29 @@
             // 
             this.txtBoxDescripcion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDescripcion.Location = new System.Drawing.Point(324, 370);
-            this.txtBoxDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxDescripcion.Location = new System.Drawing.Point(243, 301);
             this.txtBoxDescripcion.Multiline = true;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
-            this.txtBoxDescripcion.Size = new System.Drawing.Size(281, 54);
+            this.txtBoxDescripcion.Size = new System.Drawing.Size(212, 45);
             this.txtBoxDescripcion.TabIndex = 87;
             // 
             // txtBoxCodigo
             // 
             this.txtBoxCodigo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCodigo.Location = new System.Drawing.Point(324, 94);
-            this.txtBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxCodigo.Location = new System.Drawing.Point(243, 76);
             this.txtBoxCodigo.Name = "txtBoxCodigo";
-            this.txtBoxCodigo.Size = new System.Drawing.Size(341, 24);
+            this.txtBoxCodigo.Size = new System.Drawing.Size(257, 21);
             this.txtBoxCodigo.TabIndex = 75;
             // 
             // txtBoxId
             // 
             this.txtBoxId.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxId.Location = new System.Drawing.Point(324, 49);
-            this.txtBoxId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxId.Location = new System.Drawing.Point(243, 40);
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.ReadOnly = true;
-            this.txtBoxId.Size = new System.Drawing.Size(341, 24);
+            this.txtBoxId.Size = new System.Drawing.Size(257, 21);
             this.txtBoxId.TabIndex = 98;
             // 
             // txtBoxUnidad
@@ -448,18 +421,39 @@
             "LT.",
             "UN.",
             "CC."});
-            this.txtBoxUnidad.Location = new System.Drawing.Point(495, 223);
-            this.txtBoxUnidad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxUnidad.Location = new System.Drawing.Point(371, 181);
             this.txtBoxUnidad.Name = "txtBoxUnidad";
-            this.txtBoxUnidad.Size = new System.Drawing.Size(171, 25);
+            this.txtBoxUnidad.Size = new System.Drawing.Size(129, 21);
             this.txtBoxUnidad.TabIndex = 99;
+            // 
+            // btnListarCompras
+            // 
+            this.btnListarCompras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnListarCompras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            this.btnListarCompras.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnListarCompras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnListarCompras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnListarCompras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnListarCompras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListarCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarCompras.ForeColor = System.Drawing.Color.Silver;
+            this.btnListarCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarCompras.Location = new System.Drawing.Point(413, 371);
+            this.btnListarCompras.Name = "btnListarCompras";
+            this.btnListarCompras.Size = new System.Drawing.Size(258, 57);
+            this.btnListarCompras.TabIndex = 100;
+            this.btnListarCompras.Text = "LISTAR COMPRAS";
+            this.btnListarCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListarCompras.UseVisualStyleBackColor = false;
+            this.btnListarCompras.Click += new System.EventHandler(this.btnListarCompras_Click);
             // 
             // FormProducto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1184, 570);
+            this.ClientSize = new System.Drawing.Size(888, 463);
+            this.Controls.Add(this.btnListarCompras);
             this.Controls.Add(this.txtBoxUnidad);
             this.Controls.Add(this.txtBoxId);
             this.Controls.Add(label3);
@@ -489,8 +483,8 @@
             this.Controls.Add(label14);
             this.Controls.Add(label15);
             this.Controls.Add(vEND_IDLabel);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PRODUCTO";
             this.Load += new System.EventHandler(this.FormProducto_Load);
             this.ResumeLayout(false);
@@ -512,5 +506,6 @@
         private System.Windows.Forms.TextBox txtBoxCodigo;
         private System.Windows.Forms.TextBox txtBoxId;
         private System.Windows.Forms.ComboBox txtBoxUnidad;
+        private System.Windows.Forms.Button btnListarCompras;
     }
 }

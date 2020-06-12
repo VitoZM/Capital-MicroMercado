@@ -28,7 +28,6 @@ namespace TALLER.CapaVista
             InitializeComponent();
             usuario = u;
             ban = true;
-            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         public FormMisVentas(Usuario u,Cliente c)
@@ -36,7 +35,16 @@ namespace TALLER.CapaVista
             InitializeComponent();
             usuario = u;
             cliente = c;
-            this.StartPosition = FormStartPosition.CenterScreen;
+            cargarDeuda();
+        }
+
+        private void cargarDeuda()
+        {
+            this.lblTitulo.Text = "CREDITOS";
+            this.lblDeudaTotal.Visible = true;
+            this.btnPagarDeudaTotal.Visible = true;
+            this.txtBoxDeudaTotal.Visible = true;
+            this.txtBoxTotalVendido.Visible = false;            
         }
 
         private void FormReparacion_Load(object sender, EventArgs e)
@@ -110,6 +118,19 @@ namespace TALLER.CapaVista
                     }
                     break;
                 }
+            }
+        }
+
+        private void btnPagarDeudaTotal_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿SEGURO QUE DESEA PAGAR EL TOTAL DE LA DEUDA?", "PAGAR DEUDA", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in this.dgvIngresos.Rows)
+                    if (row.Cells[9].Value.ToString() == "VENDIDO")
+                        bd.pagarCredito(bd.convertirEntero(row.Cells[0].Value.ToString()), usuario.IDUSUARIO);
+                MessageBox.Show("¡VENTA PAGADA EXITOSAMENTE!");
+                DialogResult = System.Windows.Forms.DialogResult.OK;
             }
         }
     }

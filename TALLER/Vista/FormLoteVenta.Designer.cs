@@ -65,6 +65,7 @@
             this.columnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             label9 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -85,9 +86,10 @@
             label9.AutoSize = true;
             label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label9.ForeColor = System.Drawing.SystemColors.Control;
-            label9.Location = new System.Drawing.Point(618, 431);
+            label9.Location = new System.Drawing.Point(824, 530);
+            label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(117, 16);
+            label9.Size = new System.Drawing.Size(144, 20);
             label9.TabIndex = 67;
             label9.Text = "COSTO TOTAL:";
             // 
@@ -97,9 +99,10 @@
             label10.AutoSize = true;
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(3, 463);
+            label10.Location = new System.Drawing.Point(4, 570);
+            label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(69, 16);
+            label10.Size = new System.Drawing.Size(87, 20);
             label10.TabIndex = 68;
             label10.Text = "CAMBIO:";
             // 
@@ -109,9 +112,10 @@
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label8.ForeColor = System.Drawing.SystemColors.Control;
-            label8.Location = new System.Drawing.Point(3, 431);
+            label8.Location = new System.Drawing.Point(4, 530);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(86, 16);
+            label8.Size = new System.Drawing.Size(105, 20);
             label8.TabIndex = 69;
             label8.Text = "EFECTIVO:";
             // 
@@ -121,9 +125,10 @@
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(74, 63);
+            label3.Location = new System.Drawing.Point(99, 78);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(97, 16);
+            label3.Size = new System.Drawing.Size(119, 20);
             label3.TabIndex = 74;
             label3.Text = "VENDEDOR:";
             // 
@@ -133,9 +138,10 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label1.ForeColor = System.Drawing.SystemColors.Control;
-            label1.Location = new System.Drawing.Point(74, 98);
+            label1.Location = new System.Drawing.Point(99, 121);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(75, 16);
+            label1.Size = new System.Drawing.Size(92, 20);
             label1.TabIndex = 74;
             label1.Text = "CLIENTE:";
             // 
@@ -145,9 +151,10 @@
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label2.ForeColor = System.Drawing.SystemColors.Control;
-            label2.Location = new System.Drawing.Point(74, 131);
+            label2.Location = new System.Drawing.Point(99, 161);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(123, 16);
+            label2.Size = new System.Drawing.Size(153, 20);
             label2.TabIndex = 74;
             label2.Text = "FECHA Y HORA:";
             // 
@@ -157,9 +164,10 @@
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label5.ForeColor = System.Drawing.SystemColors.Control;
-            label5.Location = new System.Drawing.Point(228, 431);
+            label5.Location = new System.Drawing.Point(304, 530);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(54, 16);
+            label5.Size = new System.Drawing.Size(67, 20);
             label5.TabIndex = 67;
             label5.Text = "PAGO:";
             // 
@@ -169,9 +177,10 @@
             label4.AutoSize = true;
             label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label4.ForeColor = System.Drawing.SystemColors.Control;
-            label4.Location = new System.Drawing.Point(370, 98);
+            label4.Location = new System.Drawing.Point(493, 121);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(145, 16);
+            label4.Size = new System.Drawing.Size(181, 20);
             label4.TabIndex = 76;
             label4.Text = "C.I. O NIT CLIENTE:";
             // 
@@ -181,9 +190,10 @@
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label6.ForeColor = System.Drawing.SystemColors.Control;
-            label6.Location = new System.Drawing.Point(139, 532);
+            label6.Location = new System.Drawing.Point(185, 655);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(114, 16);
+            label6.Size = new System.Drawing.Size(141, 20);
             label6.TabIndex = 81;
             label6.Text = "DESCRIPCION:";
             // 
@@ -193,9 +203,10 @@
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label7.ForeColor = System.Drawing.SystemColors.Control;
-            label7.Location = new System.Drawing.Point(424, 431);
+            label7.Location = new System.Drawing.Point(565, 530);
+            label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(91, 16);
+            label7.Size = new System.Drawing.Size(108, 20);
             label7.TabIndex = 84;
             label7.Text = "TARJETAS:";
             // 
@@ -205,9 +216,10 @@
             this.lblDetalle.AutoSize = true;
             this.lblDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetalle.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDetalle.Location = new System.Drawing.Point(17, 11);
+            this.lblDetalle.Location = new System.Drawing.Point(23, 14);
+            this.lblDetalle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDetalle.Name = "lblDetalle";
-            this.lblDetalle.Size = new System.Drawing.Size(211, 24);
+            this.lblDetalle.Size = new System.Drawing.Size(260, 29);
             this.lblDetalle.TabIndex = 1;
             this.lblDetalle.Text = "DETALLE DE VENTA";
             // 
@@ -240,19 +252,21 @@
             this.panel3.Controls.Add(label8);
             this.panel3.Controls.Add(this.dgvVenta);
             this.panel3.Controls.Add(this.lblDetalle);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Location = new System.Drawing.Point(16, 15);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(859, 586);
+            this.panel3.Size = new System.Drawing.Size(1145, 721);
             this.panel3.TabIndex = 66;
             // 
             // txtBoxTarjeta
             // 
             this.txtBoxTarjeta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtBoxTarjeta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTarjeta.Location = new System.Drawing.Point(521, 421);
+            this.txtBoxTarjeta.Location = new System.Drawing.Point(695, 518);
+            this.txtBoxTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxTarjeta.Name = "txtBoxTarjeta";
             this.txtBoxTarjeta.ReadOnly = true;
-            this.txtBoxTarjeta.Size = new System.Drawing.Size(91, 31);
+            this.txtBoxTarjeta.Size = new System.Drawing.Size(120, 37);
             this.txtBoxTarjeta.TabIndex = 85;
             // 
             // btnReporte
@@ -267,9 +281,10 @@
             this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.ForeColor = System.Drawing.Color.Silver;
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.Location = new System.Drawing.Point(612, 11);
+            this.btnReporte.Location = new System.Drawing.Point(816, 14);
+            this.btnReporte.Margin = new System.Windows.Forms.Padding(4);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(230, 35);
+            this.btnReporte.Size = new System.Drawing.Size(307, 43);
             this.btnReporte.TabIndex = 83;
             this.btnReporte.Text = "IMPRIMIR";
             this.btnReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -288,9 +303,10 @@
             this.btnPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagar.ForeColor = System.Drawing.Color.Silver;
             this.btnPagar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagar.Location = new System.Drawing.Point(612, 481);
+            this.btnPagar.Location = new System.Drawing.Point(816, 592);
+            this.btnPagar.Margin = new System.Windows.Forms.Padding(4);
             this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(230, 35);
+            this.btnPagar.Size = new System.Drawing.Size(307, 43);
             this.btnPagar.TabIndex = 82;
             this.btnPagar.Text = "PAGAR DEUDA";
             this.btnPagar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -302,10 +318,11 @@
             // 
             this.txtBoxDescripcion.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDescripcion.Location = new System.Drawing.Point(259, 509);
+            this.txtBoxDescripcion.Location = new System.Drawing.Point(345, 626);
+            this.txtBoxDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxDescripcion.Multiline = true;
             this.txtBoxDescripcion.Name = "txtBoxDescripcion";
-            this.txtBoxDescripcion.Size = new System.Drawing.Size(333, 72);
+            this.txtBoxDescripcion.Size = new System.Drawing.Size(443, 88);
             this.txtBoxDescripcion.TabIndex = 80;
             // 
             // lblEstado
@@ -314,9 +331,10 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.Red;
-            this.lblEstado.Location = new System.Drawing.Point(617, 542);
+            this.lblEstado.Location = new System.Drawing.Point(823, 667);
+            this.lblEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(210, 24);
+            this.lblEstado.Size = new System.Drawing.Size(257, 29);
             this.lblEstado.TabIndex = 79;
             this.lblEstado.Text = "VENTA CANCELADA";
             this.lblEstado.Visible = false;
@@ -333,9 +351,10 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Silver;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(612, 538);
+            this.btnCancelar.Location = new System.Drawing.Point(816, 662);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(230, 35);
+            this.btnCancelar.Size = new System.Drawing.Size(307, 43);
             this.btnCancelar.TabIndex = 78;
             this.btnCancelar.Text = "CANCELAR VENTA";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -345,77 +364,85 @@
             // txtBoxCi
             // 
             this.txtBoxCi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxCi.Location = new System.Drawing.Point(521, 97);
+            this.txtBoxCi.Location = new System.Drawing.Point(695, 119);
+            this.txtBoxCi.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxCi.Name = "txtBoxCi";
             this.txtBoxCi.ReadOnly = true;
-            this.txtBoxCi.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxCi.Size = new System.Drawing.Size(197, 22);
             this.txtBoxCi.TabIndex = 77;
             // 
             // txtBoxFecha
             // 
             this.txtBoxFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxFecha.Location = new System.Drawing.Point(203, 130);
+            this.txtBoxFecha.Location = new System.Drawing.Point(271, 160);
+            this.txtBoxFecha.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxFecha.Name = "txtBoxFecha";
             this.txtBoxFecha.ReadOnly = true;
-            this.txtBoxFecha.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxFecha.Size = new System.Drawing.Size(197, 22);
             this.txtBoxFecha.TabIndex = 75;
             // 
             // txtBoxCliente
             // 
             this.txtBoxCliente.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxCliente.Location = new System.Drawing.Point(203, 97);
+            this.txtBoxCliente.Location = new System.Drawing.Point(271, 119);
+            this.txtBoxCliente.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxCliente.Name = "txtBoxCliente";
             this.txtBoxCliente.ReadOnly = true;
-            this.txtBoxCliente.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxCliente.Size = new System.Drawing.Size(197, 22);
             this.txtBoxCliente.TabIndex = 75;
             // 
             // txtBoxVendedor
             // 
             this.txtBoxVendedor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxVendedor.Location = new System.Drawing.Point(203, 62);
+            this.txtBoxVendedor.Location = new System.Drawing.Point(271, 76);
+            this.txtBoxVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxVendedor.Name = "txtBoxVendedor";
             this.txtBoxVendedor.ReadOnly = true;
-            this.txtBoxVendedor.Size = new System.Drawing.Size(149, 20);
+            this.txtBoxVendedor.Size = new System.Drawing.Size(197, 22);
             this.txtBoxVendedor.TabIndex = 75;
             // 
             // txtBoxCosto
             // 
             this.txtBoxCosto.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxCosto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCosto.Location = new System.Drawing.Point(741, 421);
+            this.txtBoxCosto.Location = new System.Drawing.Point(988, 518);
+            this.txtBoxCosto.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxCosto.Name = "txtBoxCosto";
             this.txtBoxCosto.ReadOnly = true;
-            this.txtBoxCosto.Size = new System.Drawing.Size(92, 31);
+            this.txtBoxCosto.Size = new System.Drawing.Size(121, 37);
             this.txtBoxCosto.TabIndex = 70;
             // 
             // txtBoxCambio
             // 
             this.txtBoxCambio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCambio.Location = new System.Drawing.Point(104, 453);
+            this.txtBoxCambio.Location = new System.Drawing.Point(139, 558);
+            this.txtBoxCambio.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxCambio.Name = "txtBoxCambio";
             this.txtBoxCambio.ReadOnly = true;
-            this.txtBoxCambio.Size = new System.Drawing.Size(92, 31);
+            this.txtBoxCambio.Size = new System.Drawing.Size(121, 37);
             this.txtBoxCambio.TabIndex = 71;
             // 
             // txtBoxPago
             // 
             this.txtBoxPago.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPago.Location = new System.Drawing.Point(288, 421);
+            this.txtBoxPago.Location = new System.Drawing.Point(384, 518);
+            this.txtBoxPago.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxPago.Name = "txtBoxPago";
             this.txtBoxPago.ReadOnly = true;
-            this.txtBoxPago.Size = new System.Drawing.Size(110, 31);
+            this.txtBoxPago.Size = new System.Drawing.Size(145, 37);
             this.txtBoxPago.TabIndex = 72;
             // 
             // txtBoxEfectivo
             // 
             this.txtBoxEfectivo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtBoxEfectivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxEfectivo.Location = new System.Drawing.Point(104, 421);
+            this.txtBoxEfectivo.Location = new System.Drawing.Point(139, 518);
+            this.txtBoxEfectivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxEfectivo.Name = "txtBoxEfectivo";
             this.txtBoxEfectivo.ReadOnly = true;
-            this.txtBoxEfectivo.Size = new System.Drawing.Size(92, 31);
+            this.txtBoxEfectivo.Size = new System.Drawing.Size(121, 37);
             this.txtBoxEfectivo.TabIndex = 72;
             // 
             // dgvVenta
@@ -454,7 +481,8 @@
             this.dgvVenta.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVenta.EnableHeadersVisualStyles = false;
             this.dgvVenta.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvVenta.Location = new System.Drawing.Point(18, 175);
+            this.dgvVenta.Location = new System.Drawing.Point(24, 215);
+            this.dgvVenta.Margin = new System.Windows.Forms.Padding(4);
             this.dgvVenta.Name = "dgvVenta";
             this.dgvVenta.ReadOnly = true;
             this.dgvVenta.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -466,7 +494,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVenta.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVenta.Size = new System.Drawing.Size(824, 240);
+            this.dgvVenta.Size = new System.Drawing.Size(1099, 295);
             this.dgvVenta.TabIndex = 66;
             // 
             // columnaCodigo
@@ -497,14 +525,14 @@
             this.columaPrecio.HeaderText = "PRECIO";
             this.columaPrecio.Name = "columaPrecio";
             this.columaPrecio.ReadOnly = true;
-            this.columaPrecio.Width = 70;
+            this.columaPrecio.Width = 86;
             // 
             // columnaCantidad
             // 
             this.columnaCantidad.HeaderText = "CANTIDAD";
             this.columnaCantidad.Name = "columnaCantidad";
             this.columnaCantidad.ReadOnly = true;
-            this.columnaCantidad.Width = 85;
+            this.columnaCantidad.Width = 104;
             // 
             // columnaCosto
             // 
@@ -520,15 +548,20 @@
             this.columnaId.Name = "columnaId";
             this.columnaId.ReadOnly = true;
             this.columnaId.Visible = false;
-            this.columnaId.Width = 43;
+            this.columnaId.Width = 50;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // FormLoteVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(889, 610);
+            this.ClientSize = new System.Drawing.Size(1185, 751);
             this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLoteVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DETALLE DE VENTA";
@@ -568,5 +601,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCosto;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaId;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

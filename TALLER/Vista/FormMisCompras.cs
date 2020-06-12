@@ -20,10 +20,18 @@ namespace TALLER.Vista
         private List<ListaCompra> listaCompras = new List<ListaCompra>();
         DataTable tabla = new DataTable();
         private Usuario usuario;
+        private bool ban = true;
         public FormMisCompras(Usuario u)
         {
             InitializeComponent();
             usuario = u;
+        }
+
+        public FormMisCompras(Usuario u, bool b)
+        {
+            InitializeComponent();
+            usuario = u;
+            ban = b;
         }
 
         private void FormCompras_Load(object sender, EventArgs e)
@@ -57,7 +65,10 @@ namespace TALLER.Vista
 
         private void cargarDatos()
         {
-            listaCompras = bd.listarCompras(usuario);
+            if (ban)
+                listaCompras = bd.listarCompras(usuario);
+            else
+                listaCompras = bd.listarComprasTarjetas();
 
             foreach (ListaCompra c in listaCompras)
                 tabla.Rows.Add(new Object[] { c.IDCOMPRA, c.NOMBREUSUARIO, c.NOMBREDISTRIBUIDORA, c.FECHA, c.COSTOTOTAL, c.DESCUENTO, c.COSTOFINAL/*, c.DESCRIPCION*/ });

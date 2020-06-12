@@ -334,12 +334,13 @@ namespace TALLER.CapaVista
             decimal costoFinal = bd.convertirDecimal(this.txtBoxCostoTotal.Text);
             decimal descuento = bd.convertirDecimal(this.txtBoxDescuento.Text);
             decimal costoTotal = costoFinal + descuento;
+            string fecha = this.dtp.Value.ToString("yyyy/MM/dd hh:mm");
             int idUsuario = 1;
 
             if (this.chkBox.Checked)
                 idUsuario = usuario.IDUSUARIO;
 
-            compra = new Compra(-1, "", costoTotal, descripcion, -1, idUsuario, descuento, costoFinal);
+            compra = new Compra(-1, fecha, costoTotal, descripcion, -1, idUsuario, descuento, costoFinal);
         }
 
         private void instanciarDistribuidora()
@@ -518,6 +519,12 @@ namespace TALLER.CapaVista
         private void txtBoxDescuento_TextChanged(object sender, EventArgs e)
         {
             calcularCostoTotal();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string fecha = this.dtp.Value.ToString("yyyy/MM/dd HH:mm");
+            MessageBox.Show(fecha);
         }
     }
 }

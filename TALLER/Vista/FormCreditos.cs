@@ -75,5 +75,18 @@ namespace TALLER.Vista
                 }
             }
         }
+
+        private void txtBoxBuscarCi_TextChanged(object sender, EventArgs e)
+        {
+            string caja = this.txtBoxBuscar.Text.ToUpper();
+
+            if (caja.Length > 0)
+                if (Char.IsDigit(caja[0]))
+                    tabla.DefaultView.RowFilter = $"CI_O_NIT LIKE '{caja}%'";
+                else
+                    tabla.DefaultView.RowFilter = $"NOMBRES LIKE '%{caja}%'";
+            else
+                tabla.DefaultView.RowFilter = $"NOMBRES LIKE '%'";
+        }
     }
 }

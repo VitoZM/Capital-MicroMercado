@@ -33,21 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
@@ -70,7 +55,7 @@
     <Compile Include="ClasesVista\ListaVenta.cs" />
     <Compile Include="Controlador\BaseDatos.cs" />
     <Compile Include="Controlador\Conversion.cs" />
-    <Compile Include="Controlador\Utilities.cs" />
+    <Compile Include="Controlador\Impresora.cs" />
     <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\Compra.cs" />
     <Compile Include="Modelo\ControlP.cs" />
@@ -135,6 +120,12 @@
     </Compile>
     <Compile Include="Vista\FormInversion.Designer.cs">
       <DependentUpon>FormInversion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\FormListadoVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormListadoVentas.Designer.cs">
+      <DependentUpon>FormListadoVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\FormMisEgresos.cs">
       <SubType>Form</SubType>
@@ -208,6 +199,12 @@
     <Compile Include="Vista\FormProducto.Designer.cs">
       <DependentUpon>FormProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\FormProductoComprado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\FormProductoComprado.Designer.cs">
+      <DependentUpon>FormProductoComprado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\FormSalario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,11 +223,11 @@
     <Compile Include="Vista\FormVentas.Designer.cs">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\FormFactura.cs">
+    <Compile Include="Vista\FromListadoCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\FormFactura.Designer.cs">
-      <DependentUpon>FormFactura.cs</DependentUpon>
+    <Compile Include="Vista\FromListadoCompras.Designer.cs">
+      <DependentUpon>FromListadoCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="Vista\Login.cs">
       <SubType>Form</SubType>
@@ -276,6 +273,9 @@
     <EmbeddedResource Include="Vista\FormInversion.resx">
       <DependentUpon>FormInversion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormListadoVentas.resx">
+      <DependentUpon>FormListadoVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormLote.resx">
       <DependentUpon>FormLote.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +309,9 @@
     <EmbeddedResource Include="Vista\FormProducto.resx">
       <DependentUpon>FormProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\FormProductoComprado.resx">
+      <DependentUpon>FormProductoComprado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\FormSalario.resx">
       <DependentUpon>FormSalario.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,8 +321,8 @@
     <EmbeddedResource Include="Vista\FormVentas.resx">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\FormFactura.resx">
-      <DependentUpon>FormFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\FromListadoCompras.resx">
+      <DependentUpon>FromListadoCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

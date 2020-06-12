@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using TALLER.Controlador;
 using TALLER.Modelo;
 using TALLER.Vista;
+using TALLER.ClasesVista;
 
 namespace TALLER.CapaVista
 {
@@ -21,8 +22,12 @@ namespace TALLER.CapaVista
         Cliente cliente = null;
         Venta venta = null;
         List<LoteVenta> listaLoteVenta = new List<LoteVenta>();
+        List<ListaLoteVenta> listaProductos = new List<ListaLoteVenta>();
         BaseDatos bd = new BaseDatos();
         bool banVenta = false;
+        ListaVenta listaVenta;
+        Conversion conversion = new Conversion();
+
         public FormVentas()
         {
             InitializeComponent();
@@ -132,6 +137,11 @@ namespace TALLER.CapaVista
             {
                 e.SuppressKeyPress = true;
                 this.txtBoxEfectivo.Focus();
+            }
+            if(e.KeyCode == Keys.F1)
+            {
+                e.SuppressKeyPress = true;
+                btnAlmacen_Click(sender, e);
             }
         }
 
@@ -288,8 +298,8 @@ namespace TALLER.CapaVista
                 instanciarLoteVenta();
                 instanciarVenta();
                 bd.insertarVenta(venta, cliente, listaLoteVenta);
-                limpiar();
                 MessageBox.Show("¡VENTA REGISTRADA EXITOSAMENTE!");
+                limpiar();
             }
         }
 
@@ -362,8 +372,8 @@ namespace TALLER.CapaVista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            banVenta = true;
             cambiarModoBotones(banVenta);
+            banVenta = false;
         }
 
         private void cambiarModoBotones(bool modo)
@@ -371,6 +381,7 @@ namespace TALLER.CapaVista
             this.btnProcesar.Visible = modo;
             this.btnRegistrar.Visible = !modo;
             this.btnCancelar.Visible = !modo;
+            this.btnImprimir.Visible = !modo;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -406,7 +417,12 @@ namespace TALLER.CapaVista
         private void txtBoxPago_SelectedValueChanged(object sender, EventArgs e)
         {
             if (this.txtBoxPago.Text == "CREDITO" || this.txtBoxPago.Text == "TARJETA")
+            {
+                this.txtBoxEfectivo.ReadOnly = true;
                 this.txtBoxEfectivo.Text = this.txtBoxCosto.Text;
+            }
+            else
+                this.txtBoxEfectivo.ReadOnly = false;
         }
 
         private void txtBoxEfectivo_KeyDown(object sender, KeyEventArgs e)
@@ -441,6 +457,165 @@ namespace TALLER.CapaVista
                 else
                     btnProcesar_Click(sender, e);
             }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (ventaValida())
+            {
+                cambiarModoBotones(banVenta);
+                instanciarCliente();
+                instanciarLoteVenta();
+                instanciarVenta();
+                bd.insertarVenta(venta, cliente, listaLoteVenta);
+
+                listaVenta = bd.obtenerUltimaVenta();
+                imprimirVenta();
+
+                MessageBox.Show("¡VENTA REGISTRADA EXITOSAMENTE!");
+                limpiar();
+            }
+        }
+
+        private void imprimirVenta()
+        {
+            printDocument1.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            try
+            {
+                int yRectangulo;
+                yRectangulo = calcularY(e);
+                /*e.Graphics.DrawImage(pictureBox1.Image, 40, 20, 110, 110);
+                e.Graphics.DrawImage(pictureBox2.Image, 40, 119, 110, 40);*/
+                //                                   x   y   width height
+                Rectangle rectangulo = new Rectangle(0, 225, 900, yRectangulo);
+
+                e.Graphics.DrawRectangle(Pens.Gray, rectangulo);
+                //                                                                                               x   y
+                e.Graphics.DrawString("NOTA DE VENTA", new Font("Verdana", 12, FontStyle.Bold), Brushes.Black, 375, 40);
+                e.Graphics.DrawString("ID VENTA: " + listaVenta.IDVENTA, new Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 590, 40);
+
+                e.Graphics.DrawString("MICROMERCADO CAPITAL", new Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 40, 80);
+                e.Graphics.DrawString("COBIJA # 57", new Font("Verdana", 10, FontStyle.Bold), Brushes.Black, 40, 105);
+
+                e.Graphics.DrawString("FECHA DE VENTA: " + this.listaVenta.FECHA, new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 40, 130);
+
+                e.Graphics.DrawString("SEÑOR(ES):", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 40, 160);
+                e.Graphics.DrawString(listaVenta.NOMBRECLIENTE, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 150, 160);
+                e.Graphics.DrawString("TELF.:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 400, 160);
+                e.Graphics.DrawString("-", new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 450, 160);
+                e.Graphics.DrawString("NIT/CI:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, 160);
+                e.Graphics.DrawString(listaVenta.CICLIENTE, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 685, 160);
+                e.Graphics.DrawString("DIRECCION:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 40, 180);
+                e.Graphics.DrawString("-", new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 150, 180);
+                e.Graphics.DrawString("VENDEDOR:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, 180);
+                e.Graphics.DrawString(listaVenta.NOMBREUSUARIO, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 685, 180);
+                e.Graphics.DrawString("CANTIDAD", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 50, 210);
+                e.Graphics.DrawString("CONCEPTO", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 240, 210);
+                e.Graphics.DrawString("PRECIO", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 580, 210);
+                e.Graphics.DrawString("TOTAL", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 690, 210);
+                int nuevaY = 232 + yRectangulo;
+                e.Graphics.DrawString("SON:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 50, nuevaY);
+                e.Graphics.DrawString(conversion.enletras((listaVenta.COSTOTARJETA + listaVenta.COSTOTOTAL).ToString()), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 100, nuevaY);
+                e.Graphics.DrawString("TOTAL VENTA:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 555, nuevaY);
+                e.Graphics.DrawString((listaVenta.COSTOTOTAL + listaVenta.COSTOTARJETA).ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 700, nuevaY);
+                /*e.Graphics.DrawString("TARJETAS DE REGARCA:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 555, nuevaY + 20);
+                e.Graphics.DrawString(listaVenta.COSTOTARJETA.ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 700, nuevaY + 20);
+                e.Graphics.DrawString("COSTO FINAL:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 555, nuevaY + 40);
+                e.Graphics.DrawString((listaVenta.COSTOTARJETA + listaVenta.COSTOTOTAL).ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 700, nuevaY + 40);*/
+                e.Graphics.DrawString("EFECTIVO:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 555, nuevaY + 20);
+                e.Graphics.DrawString(listaVenta.EFECTIVO.ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 700, nuevaY + 20);
+                e.Graphics.DrawString("VUELTO:", new Font("Verdana", 8, FontStyle.Bold), Brushes.Black, 555, nuevaY + 40);
+                e.Graphics.DrawString(listaVenta.CAMBIO.ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 700, nuevaY + 40);                
+
+                e.Graphics.DrawString(listaVenta.NOMBRECLIENTE, new Font("Verdana", 7, FontStyle.Bold), Brushes.Black, 50, nuevaY + 82);
+                e.Graphics.DrawString(listaVenta.NOMBREUSUARIO, new Font("Verdana", 7, FontStyle.Bold), Brushes.Black, 220, nuevaY + 82);
+
+                e.Graphics.DrawString("EL MONTO A CANCELAR SE ENCUENTRA EXPRESADO EN BOLIVIANOS.", new Font("Verdana", 7, FontStyle.Regular), Brushes.Black, 40, nuevaY + 120);
+
+                rectangulo = new Rectangle(40, nuevaY + 80, 130, 1);
+                e.Graphics.DrawRectangle(Pens.Gray, rectangulo);
+                rectangulo = new Rectangle(195, nuevaY + 80, 130, 1);
+                e.Graphics.DrawRectangle(Pens.Gray, rectangulo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private int calcularY(System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            listaProductos = bd.listarLoteVenta(listaVenta.IDVENTA);
+            int y = 0;
+            foreach(ListaLoteVenta p in listaProductos)
+            {
+                y += 20;
+                e.Graphics.DrawString(p.CANTIDAD.ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 60, 207 + y);
+                e.Graphics.DrawString(p.NOMBRE + " " + p.MARCA + " " + p.CONTENIDO, new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 130, 207 + y);
+                e.Graphics.DrawString(p.PRECIOVENTA.ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 590, 207 + y);
+                e.Graphics.DrawString(p.COSTO.ToString(), new Font("Verdana", 8, FontStyle.Regular), Brushes.Black, 700, 207 + y);
+            }
+
+            return y;
+        }
+
+        private void txtBoxCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxCodigo_Enter(object sender, EventArgs e)
+        {
+            this.txtBoxCodigo.BackColor = Color.FromArgb(243,195,151);
+        }
+
+        private void txtBoxCodigo_Leave(object sender, EventArgs e)
+        {
+            this.txtBoxCodigo.BackColor = Color.White;
+        }
+
+        private void txtBoxEfectivo_Enter(object sender, EventArgs e)
+        {
+            this.txtBoxEfectivo.BackColor = Color.FromArgb(243, 195, 151);
+        }
+
+        private void txtBoxEfectivo_Leave(object sender, EventArgs e)
+        {
+            this.txtBoxEfectivo.BackColor = Color.White;
+        }
+
+        private void txtBoxCi_Enter(object sender, EventArgs e)
+        {
+            this.txtBoxCi.BackColor = Color.FromArgb(243, 195, 151);
+        }
+
+        private void txtBoxCi_Leave(object sender, EventArgs e)
+        {
+            this.txtBoxCi.BackColor = Color.White;
+        }
+
+        private void txtBoxNombres_Enter(object sender, EventArgs e)
+        {
+            this.txtBoxNombres.BackColor = Color.FromArgb(243, 195, 151);
+        }
+
+        private void txtBoxNombres_Leave(object sender, EventArgs e)
+        {
+            this.txtBoxNombres.BackColor = Color.White;
+        }
+
+        private void txtBoxTelefono_Leave(object sender, EventArgs e)
+        {
+            this.txtBoxTelefono.BackColor = Color.White;
+        }
+
+        private void txtBoxTelefono_Enter(object sender, EventArgs e)
+        {
+            this.txtBoxTelefono.BackColor = Color.FromArgb(243, 195, 151);
         }
     }
 }

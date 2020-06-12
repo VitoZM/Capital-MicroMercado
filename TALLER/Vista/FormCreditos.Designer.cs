@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtBoxBuscarCi = new System.Windows.Forms.TextBox();
+            this.txtBoxBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
             label3 = new System.Windows.Forms.Label();
@@ -41,37 +41,41 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.txtBoxBuscarCi);
-            this.panel3.Controls.Add(label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dgvClientes);
-            this.panel3.Location = new System.Drawing.Point(12, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 449);
-            this.panel3.TabIndex = 67;
-            // 
-            // txtBoxBuscarCi
-            // 
-            this.txtBoxBuscarCi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtBoxBuscarCi.Location = new System.Drawing.Point(490, 42);
-            this.txtBoxBuscarCi.Name = "txtBoxBuscarCi";
-            this.txtBoxBuscarCi.Size = new System.Drawing.Size(164, 20);
-            this.txtBoxBuscarCi.TabIndex = 64;
-            // 
             // label3
             // 
             label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.ForeColor = System.Drawing.SystemColors.Control;
-            label3.Location = new System.Drawing.Point(312, 46);
+            label3.Location = new System.Drawing.Point(416, 57);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(143, 16);
+            label3.Size = new System.Drawing.Size(179, 20);
             label3.TabIndex = 65;
             label3.Text = "CI, NIT O NOMBRE:";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.txtBoxBuscar);
+            this.panel3.Controls.Add(label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.dgvClientes);
+            this.panel3.Location = new System.Drawing.Point(16, 15);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1349, 690);
+            this.panel3.TabIndex = 67;
+            // 
+            // txtBoxBuscar
+            // 
+            this.txtBoxBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtBoxBuscar.Location = new System.Drawing.Point(653, 52);
+            this.txtBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxBuscar.Name = "txtBoxBuscar";
+            this.txtBoxBuscar.Size = new System.Drawing.Size(217, 22);
+            this.txtBoxBuscar.TabIndex = 64;
+            this.txtBoxBuscar.TextChanged += new System.EventHandler(this.txtBoxBuscarCi_TextChanged);
             // 
             // label4
             // 
@@ -79,9 +83,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(430, 13);
+            this.label4.Location = new System.Drawing.Point(573, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 24);
+            this.label4.Size = new System.Drawing.Size(145, 29);
             this.label4.TabIndex = 1;
             this.label4.Text = "CREDITOS";
             // 
@@ -114,7 +119,8 @@
             this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.GridColor = System.Drawing.Color.SteelBlue;
-            this.dgvClientes.Location = new System.Drawing.Point(3, 74);
+            this.dgvClientes.Location = new System.Drawing.Point(4, 91);
+            this.dgvClientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
             this.dgvClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -126,17 +132,18 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvClientes.Size = new System.Drawing.Size(1004, 370);
+            this.dgvClientes.Size = new System.Drawing.Size(1339, 581);
             this.dgvClientes.TabIndex = 9;
             this.dgvClientes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellDoubleClick);
             // 
             // FormCreditos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1070, 596);
+            this.ClientSize = new System.Drawing.Size(1427, 734);
             this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormCreditos";
             this.Text = "CREDITOS";
             this.Load += new System.EventHandler(this.FormCreditos_Load);
@@ -150,7 +157,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtBoxBuscarCi;
+        private System.Windows.Forms.TextBox txtBoxBuscar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvClientes;
     }
