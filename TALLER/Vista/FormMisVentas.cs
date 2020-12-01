@@ -90,6 +90,10 @@ namespace TALLER.CapaVista
                 tabla.Rows.Add(new Object[] { v.IDVENTA, v.NOMBREUSUARIO, v.NOMBRECLIENTE, v.FECHA, v.COSTOTARJETA,v.COSTOTOTAL, v.PAGO, v.EFECTIVO, v.CAMBIO, v.ESTADO });
 
             this.dgvIngresos.DataSource = tabla;
+
+            foreach(DataGridViewRow row in this.dgvIngresos.Rows)
+                if (row.Cells[9].Value.ToString() == "CANCELADO")
+                    row.DefaultCellStyle.BackColor = Color.Red;
         }
 
         private void dgvIngresos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
